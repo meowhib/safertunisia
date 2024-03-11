@@ -11,5 +11,5 @@ export default function WhatDoTo() {
         <h2 className="text-2xl font-bold text-gray-900">Maps of Djerba</h2>
       </div>
     </div>
-  )
+  );
 }
