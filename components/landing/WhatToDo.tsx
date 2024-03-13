@@ -41,7 +41,7 @@ export default function WhatDoTo() {
             alt={item.title}
             width={100}
             height={100}
-            className="rounded-lg absolute left-0 ml-5"
+            className="rounded-lg absolute left-0 ml-5 h-14 w-14 md:h-16 md:w-16 lg:h-20 lg:w-20"
           />
         </div>
       ))}

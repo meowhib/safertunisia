@@ -21,12 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  KeyIcon,
-  MapPinIcon,
-  MapIcon,
-  SearchIcon,
-} from "lucide-react";
+import { KeyIcon, MapPinIcon, MapIcon, SearchIcon } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
 
@@ -48,14 +43,12 @@ export default function SearchForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="grid grid-flow-col grid-cols-4 justify-stretch gap-x-6 bg-white p-4 rounded-md shadow-md sm:gap-x-8 sm:p-6 lg:p-8"
+        className="grid grid-cols-1 md:grid-cols-4 justify-stretch gap-y-6 md:gap-x-6 bg-white p-4 rounded-md shadow-md sm:gap-x-8 sm:p-6 lg:p-8"
       >
         <div className="text-left space-y-3">
           <div className="flex items-center space-x-2">
             <KeyIcon className="w-6 h-6" />
-            <h1 className="font-semibold  text-xl">
-             Keywords 
-            </h1>
+            <h1 className="font-semibold  text-xl">Keywords</h1>
           </div>
           <FormField
             control={form.control}
@@ -73,9 +66,7 @@ export default function SearchForm() {
         <div className="text-left space-y-3">
           <div className="flex items-center space-x-2">
             <MapIcon className="w-6 h-6" />
-            <h1 className="font-semibold  text-xl">
-              Attraction
-            </h1>
+            <h1 className="font-semibold  text-xl">Attraction</h1>
           </div>
 
           <FormField
@@ -106,9 +97,7 @@ export default function SearchForm() {
         <div className="text-left space-y-3">
           <div className="flex items-center space-x-2">
             <MapPinIcon className="w-6 h-6" />
-            <h1 className="font-semibold  text-xl">
-              Location
-            </h1>
+            <h1 className="font-semibold  text-xl">Location</h1>
           </div>
 
           <FormField
