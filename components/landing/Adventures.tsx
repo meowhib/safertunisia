@@ -1,5 +1,6 @@
 import Activity from "../Activity";
 import { ActivityProps } from "../Activity";
+import ActivitiesCarousel from "./ActivitiesCarousel";
 
 export default function Adventures() {
   const activities: ActivityProps[] = [
@@ -31,6 +32,20 @@ export default function Adventures() {
       duration: "3 days",
       price: 800,
     },
+    {
+      destination: "Wildlife Safari",
+      country: "Kenya",
+      description: "See the big five in their natural habitat",
+      duration: "14 days",
+      price: 3000,
+    },
+    {
+      destination: "Cultural Tour",
+      country: "India",
+      description: "Experience the rich culture of India",
+      duration: "7 days",
+      price: 1500,
+    },
   ];
 
   return (
@@ -38,11 +53,7 @@ export default function Adventures() {
       <h2 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
         Find your adventures!
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        {activities.map((activity, index) => (
-          <Activity key={index} {...activity} />
-        ))}
-      </div>
+      <ActivitiesCarousel activities={activities} />
     </div>
   );
 }
