@@ -24,14 +24,14 @@ export default function WhatDoTo() {
       {whatToDo.map((item, index) => (
         <div
           key={index}
-          className="h-32 bg-gray-200 rounded-lg flex items-center justify-center relative"
+          className="h-32 bg-gray-200 rounded-2xl flex items-center justify-center relative"
         >
           <Image
             src={`/${item.image}`}
             alt={item.title}
             layout="fill"
             objectFit="cover"
-            className="rounded-lg absolute"
+            className="rounded-2xl absolute"
           />
           <h2 className="text-2xl font-bold text-white absolute">
             {item.title}
@@ -41,7 +41,7 @@ export default function WhatDoTo() {
             alt={item.title}
             width={100}
             height={100}
-            className="rounded-lg absolute left-0 ml-5 h-14 w-14 md:h-16 md:w-16 lg:h-20 lg:w-20"
+            className="rounded-2xl absolute left-0 ml-5 h-14 w-14 md:h-16 md:w-16 lg:h-20 lg:w-20"
           />
         </div>
       ))}

@@ -34,11 +34,11 @@ export default function Page() {
       >
         <h1 className="text-4xl font-bold text-white absolute">Djerba</h1>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white rounded-lg p-8 -translate-y-8 drop-shadow-lg text-center">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white rounded-2xl p-8 -translate-y-8 drop-shadow-lg text-center">
         {perks.map((perk, index) => (
           <div
             key={index}
-            className="rounded-lg flex flex-col items-center content-normal"
+            className="rounded-2xl flex flex-col items-center content-normal"
           >
             <div className="bg-primary w-10 h-10 md:w-16 md:h-16 aspect-square rounded-full flex justify-center items-center">
               <perk.icon className="text-white" />

@@ -85,7 +85,7 @@ export default function Navbar() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-2xl p-2.5 text-gray-700"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -128,9 +128,9 @@ export default function Navbar() {
                   {products.map((item) => (
                     <div
                       key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                      className="group relative flex items-center gap-x-6 rounded-2xl p-4 text-sm leading-6 hover:bg-gray-50"
                     >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-2xl bg-gray-50 group-hover:bg-white">
                         <item.icon
                           className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
                           aria-hidden="true"
@@ -207,7 +207,7 @@ export default function Navbar() {
             </Link>
             <button
               type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 rounded-2xl p-2.5 text-gray-700"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
@@ -219,13 +219,13 @@ export default function Navbar() {
               <div className="space-y-2 py-6">
                 <Link
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-2xl px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Home
                 </Link>
                 <Link
                   href="/digital-nomads"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-2xl px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Digital Nomads
                 </Link>
@@ -233,7 +233,7 @@ export default function Navbar() {
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-2xl py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                         Activities & trips
                         <ChevronDownIcon
                           className={classNames(
@@ -250,7 +250,7 @@ export default function Navbar() {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            className="block rounded-2xl py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -261,7 +261,7 @@ export default function Navbar() {
                 </Disclosure>
                 <Link
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-2xl px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Blog
                 </Link>
@@ -269,7 +269,7 @@ export default function Navbar() {
               <div className="py-6">
                 <Link
                   href="/guide"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-2xl px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   <Button>Guide</Button>
                 </Link>

@@ -17,7 +17,7 @@ export default function Activity({
   price,
 }: ActivityProps) {
   return (
-    <div className="bg-white rounded-lg shadow-md flex-col overflow-hidden">
+    <div className="bg-white rounded-xl shadow-xl flex-col overflow-hidden">
       <Image
         className="aspect-video w-full"
         src="/hero-image.png"
@@ -26,7 +26,7 @@ export default function Activity({
         height={338}
       />
       <div className="px-4 pb-4 space-y-4">
-        <div className="bg-white mx-4 rounded-lg -translate-y-6 px-4 py-2 shadow-md">
+        <div className="bg-white mx-4 rounded-xl -translate-y-6 px-4 py-2 shadow-md">
           <p className="text-md leading-8 text-gray-600">{duration}</p>
         </div>
         <div>

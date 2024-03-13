@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
+import { reenieBeanie } from "../ui/fonts";
 
 export default function CTA2() {
   return (
@@ -12,13 +14,18 @@ export default function CTA2() {
         layout="fill"
       />
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-xl font-semibold tracking-tight text-primary sm:text-2xl">
+        <h2
+          className={cn(
+            "text-4xl font-semibold tracking-tight text-primary sm:text-4xl drop-shadow-md",
+            reenieBeanie.className
+          )}
+        >
           Start your life in Djerba
         </h2>
-        <h2 className="text-4xl font-bold tracking-tight text-white sm:text-4xl">
+        <h2 className="text-4xl font-bold tracking-tight text-white sm:text-4xl drop-shadow-md">
           In Djerba as Digial Nomad ?
         </h2>
-        <p className="mt-6 text-lg leading-8 text-gray-100">
+        <p className="mt-6 text-lg leading-8 text-gray-100 drop-shadow-md">
           Accomandation, Co-working spaces, Transports, Activities, and more...
         </p>
         <Link href="/contact">
