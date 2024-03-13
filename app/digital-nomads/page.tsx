@@ -50,6 +50,44 @@ export default function Page() {
           </div>
         ))}
       </div>
+      <div className="py-12 space-y-8 px-24">
+        <div className="space-y-4">
+          <h1 className="text-4xl font-bold text-gray-900">Enjoy a pleasant climate all year round
+          </h1>
+          <p className="text-lg text-gray-600">
+            Djerba is a beautiful island located in the Gulf of Gabes, off the
+            coast of Tunisia. It is the largest island in North Africa, and the
+            fifth largest in the Mediterranean Sea. The island is known for its
+            beautiful beaches and pleasant climate all year round. The island is
+            also home to a number of historic sites, including the El Ghriba
+            Synagogue, which is one of the oldest synagogues in the world.
+          </p>
+        </div>
+        <div className="space-y-4">
+          <h1 className="text-4xl font-bold text-gray-900">Enjoy a pleasant climate all year round
+          </h1>
+          <p className="text-lg text-gray-600">
+            Djerba is a beautiful island located in the Gulf of Gabes, off the
+            coast of Tunisia. It is the largest island in North Africa, and the
+            fifth largest in the Mediterranean Sea. The island is known for its
+            beautiful beaches and pleasant climate all year round. The island is
+            also home to a number of historic sites, including the El Ghriba
+            Synagogue, which is one of the oldest synagogues in the world.
+          </p>
+        </div>
+        <div className="space-y-4">
+          <h1 className="text-4xl font-bold text-gray-900">Enjoy a pleasant climate all year round
+          </h1>
+          <p className="text-lg text-gray-600">
+            Djerba is a beautiful island located in the Gulf of Gabes, off the
+            coast of Tunisia. It is the largest island in North Africa, and the
+            fifth largest in the Mediterranean Sea. The island is known for its
+            beautiful beaches and pleasant climate all year round. The island is
+            also home to a number of historic sites, including the El Ghriba
+            Synagogue, which is one of the oldest synagogues in the world.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
