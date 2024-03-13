@@ -55,8 +55,19 @@ export default function ActivitiesCarousel({
         <CarouselPrevious />
         <CarouselNext />
       </div>
-      <div className="py-6 text-center text-sm text-muted-foreground">
+      <div className="py-6 text-center text-sm text-muted-foreground sm:block hidden">
         {Array.from({ length: count }, (_, i) => (
+          <span
+            key={i}
+            className={`inline-block w-2 h-2 mx-1 rounded-full cursor-pointer ${
+              i === current - 1 ? "bg-primary" : "bg-gray-300"
+            }`}
+            onClick={() => api?.scrollTo(i)}
+          />
+        ))}
+      </div>
+      <div className="py-6 text-center text-sm text-muted-foreground sm:hidden block">
+        {Array.from({ length: activities.length }, (_, i) => (
           <span
             key={i}
             className={`inline-block w-2 h-2 mx-1 rounded-full cursor-pointer ${

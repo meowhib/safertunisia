@@ -36,7 +36,7 @@ export default function Sponsors() {
             This is possible thanks to our sponsors
           </p>
         </div>
-        <div className="grid grid-cols-4 gap-32">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-32">
           {sponsors.map((sponsor, index) => (
             <div key={index} className="flex items-center justify-center">
               <Link href={sponsor.href}>
