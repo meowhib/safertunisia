@@ -30,8 +30,10 @@ export default function ActivitiesCarousel({
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <div className="hidden md:block">
+        <CarouselPrevious />
+        <CarouselNext />
+      </div>
     </Carousel>
   );
 }

@@ -21,6 +21,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  KeyIcon,
+  MapPinIcon,
+  MapIcon,
+  SearchIcon,
+} from "lucide-react";
 
 import { Input } from "@/components/ui/input";
 
@@ -45,7 +51,12 @@ export default function SearchForm() {
         className="grid grid-flow-col grid-cols-4 justify-stretch gap-x-6 bg-white p-4 rounded-md shadow-md sm:gap-x-8 sm:p-6 lg:p-8"
       >
         <div className="text-left space-y-3">
-          <h1 className="font-semibold  text-xl">Keyword</h1>
+          <div className="flex items-center space-x-2">
+            <KeyIcon className="w-6 h-6" />
+            <h1 className="font-semibold  text-xl">
+             Keywords 
+            </h1>
+          </div>
           <FormField
             control={form.control}
             name="keywords"
@@ -60,7 +71,12 @@ export default function SearchForm() {
           />
         </div>
         <div className="text-left space-y-3">
-          <h1 className="font-semibold  text-xl">Attraction</h1>
+          <div className="flex items-center space-x-2">
+            <MapIcon className="w-6 h-6" />
+            <h1 className="font-semibold  text-xl">
+              Attraction
+            </h1>
+          </div>
 
           <FormField
             control={form.control}
@@ -88,7 +104,12 @@ export default function SearchForm() {
           />
         </div>
         <div className="text-left space-y-3">
-          <h1 className="font-semibold  text-xl">Location</h1>
+          <div className="flex items-center space-x-2">
+            <MapPinIcon className="w-6 h-6" />
+            <h1 className="font-semibold  text-xl">
+              Location
+            </h1>
+          </div>
 
           <FormField
             control={form.control}
@@ -116,7 +137,7 @@ export default function SearchForm() {
           />
         </div>
         <Button type="submit" className="w-full h-full">
-          Submit
+          <SearchIcon className="mr-2 h-4 w-4" /> Submit
         </Button>
       </form>
     </Form>
