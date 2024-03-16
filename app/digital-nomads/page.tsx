@@ -1,3 +1,4 @@
+import CTA3 from "@/components/landing/CTA3";
 import { BedIcon, PlaneIcon, ShieldCheckIcon, WifiIcon } from "lucide-react";
 
 const perks = [
@@ -90,6 +91,7 @@ export default function Page() {
             Synagogue, which is one of the oldest synagogues in the world.
           </p>
         </div>
+        <CTA3 />
       </div>
     </div>
   );
