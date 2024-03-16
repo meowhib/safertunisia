@@ -5,7 +5,7 @@ import Adventures from "@/components/landing/Adventures";
 import CTA2 from "@/components/landing/CTA2";
 import BlogSection from "@/components/landing/BlogSection";
 import Sponsors from "@/components/landing/Sponsors";
-import ActivitiesCarousel from "@/components/landing/ActivitiesCarousel";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
