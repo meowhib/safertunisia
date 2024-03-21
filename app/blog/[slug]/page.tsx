@@ -13,6 +13,71 @@ export default async function BlogPage({
         {props.children}
       </h1>
     ),
+    h2: (props: any) => (
+      <h2 {...props} className="text-3xl font-bold">
+        {props.children}
+      </h2>
+    ),
+    h3: (props: any) => (
+      <h3 {...props} className="text-2xl font-bold">
+        {props.children}
+      </h3>
+    ),
+    h4: (props: any) => (
+      <h4 {...props} className="text-xl font-bold">
+        {props.children}
+      </h4>
+    ),
+    h5: (props: any) => (
+      <h5 {...props} className="text-lg font-bold">
+        {props.children}
+      </h5>
+    ),
+    h6: (props: any) => (
+      <h6 {...props} className="text-base font-bold">
+        {props.children}
+      </h6>
+    ),
+    p: (props: any) => (
+      <p {...props} className="text-lg leading-8 text-gray-600">
+        {props.children}
+      </p>
+    ),
+    a: (props: any) => (
+      <a {...props} className="text-blue-600 hover:underline">
+        {props.children}
+      </a>
+    ),
+    ul: (props: any) => (
+      <ul {...props} className="list-disc list-inside">
+        {props.children}
+      </ul>
+    ),
+    ol: (props: any) => (
+      <ol {...props} className="list-decimal list-inside">
+        {props.children}
+      </ol>
+    ),
+    li: (props: any) => (
+      <li {...props} className="text-lg leading-8 text-gray-600">
+        {props.children}
+      </li>
+    ),
+    blockquote: (props: any) => (
+      <blockquote
+        {...props}
+        className="border-l-4 border-gray-200 pl-4 italic my-8"
+      >
+        {props.children}
+      </blockquote>
+    ),
+    img: (props: any) => (
+      <img
+        {...props}
+        className="my-8 w-full rounded-2xl bg-gray-100 object-cover aspect-[16/9] sm:aspect-[2/1] lg:aspect-[3/2]"
+      />
+    ),
+
   };
 
   async function getBlogBySlug(slug: string) {
