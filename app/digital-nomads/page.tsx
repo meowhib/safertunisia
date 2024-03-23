@@ -51,7 +51,7 @@ export default function Page() {
           </div>
         ))}
       </div>{" "}
-      <div className="py-12 space-y-8 px-24">
+      <div className="py-12 space-y-8 px-8 md:px-24">
         <div className="space-y-4">
           <h1 className="text-2xl md:text-4xl font-bold text-gray-900">
             Enjoy a pleasant climate all year round

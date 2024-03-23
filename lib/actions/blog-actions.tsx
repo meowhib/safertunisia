@@ -30,111 +30,104 @@ export async function getBlogPostBySlug(slug: string) {
 }
 
 export async function deleteBlogPost(slug: string) {
-  try {
-    const session = await getServerSession(authOptions);
+  const session = await getServerSession(authOptions);
 
-    if (!session) {
-      throw new Error("Unauthorized");
-    }
-
-    if (!session.user || !session.user?.email) {
-      throw new Error("Unauthorized");
-    }
-
-    if (!session.user?.email.endsWith("@safertunisia.com")) {
-      throw new Error("Unauthorized");
-    }
-
-    await prisma.blog.delete({
-      where: {
-        slug: slug,
-      },
-    });
-
-    console.log("Blog post deleted successfully");
-    revalidatePath("/blog");
-    redirect("/blog");
-  } catch (error) {
-    console.error(error);
+  if (!session) {
+    redirect("/api/auth/signin");
   }
+
+  if (!session.user || !session.user?.email) {
+    redirect("/api/auth/signin");
+  }
+
+  if (!session.user?.email.endsWith("@safertunisia.com")) {
+    redirect("/api/auth/signin");
+  }
+
+  await prisma.blog.delete({
+    where: {
+      slug: slug,
+    },
+  });
+
+  console.log("Blog post deleted successfully");
+  revalidatePath("/blog", "page");
+  redirect("/blog");
 }
 
 export async function updateBlogPost(
   slug: string,
   values: z.infer<typeof newBlogPostFormSchema>
 ) {
-  try {
-    const session = await getServerSession(authOptions);
+  const session = await getServerSession(authOptions);
 
-    if (!session) {
-      throw new Error("Unauthorized");
-    }
-
-    if (!session.user || !session.user?.email) {
-      throw new Error("Unauthorized");
-    }
-
-    if (!session.user?.email.endsWith("@safertunisia.com")) {
-      throw new Error("Unauthorized");
-    }
-
-    await prisma.blog.update({
-      where: {
-        slug: slug,
-      },
-      data: {
-        title: values.title,
-        slug: slugify(values.title, {
-          lower: true,
-          strict: true,
-        }),
-        content: values.content,
-        description: values.description,
-        imageUrl: values.imageURL,
-        authorId: values.author,
-      },
-    });
-  
-    console.log("Blog post updated successfully");
-    revalidatePath(`/blog`);
-    redirect(`/blog`);
-  } catch (error) {
-    console.error(error);
+  if (!session) {
+    redirect("/api/auth/signin");
   }
-}     
+
+  if (!session.user || !session.user?.email) {
+    redirect("/api/auth/signin");
+  }
+
+  if (!session.user?.email.endsWith("@safertunisia.com")) {
+    redirect("/api/auth/signin");
+  }
+
+  await prisma.blog.update({
+    where: {
+      slug: slug,
+    },
+    data: {
+      title: values.title,
+      slug: slugify(values.title, {
+        lower: true,
+        strict: true,
+      }),
+      content: values.content,
+      description: values.description,
+      imageUrl: values.imageURL,
+      authorId: values.author,
+    },
+  });
+
+  console.log("Blog post updated successfully");
+  revalidatePath("/blog", "page");
+  redirect("/blog");
+}
 
 export async function createBlogPost(
   values: z.infer<typeof newBlogPostFormSchema>
 ) {
-  try {
-    const session = await getServerSession(authOptions);
+  const session = await getServerSession(authOptions);
 
-    if (!session) {
-      throw new Error("Unauthorized");
-    }
-
-    if (!session.user || !session.user?.email) {
-      throw new Error("Unauthorized");
-    }
-
-    if (!session.user?.email.endsWith("@safertunisia.com")) {
-      throw new Error("Unauthorized");
-    }
-
-    await prisma.blog.create({
-      data: {
-        slug: slugify(values.title, {
-          lower: true,
-          strict: true,
-        }), 
-        title: values.title,
-        description: values.description,
-        imageUrl: values.imageURL,
-        authorId: values.author,
-        content: values.content,
-      },
-    });
-  } catch (error) {
-    console.error(error);
+  if (!session) {
+    redirect("/api/auth/signin");
   }
+
+  if (!session.user || !session.user?.email) {
+    redirect("/api/auth/signin");
+  }
+
+  if (!session.user?.email.endsWith("@safertunisia.com")) {
+    redirect("/api/auth/signin");
+  }
+
+  await prisma.blog.create({
+    data: {
+      slug: slugify(values.title, {
+        lower: true,
+        strict: true,
+      }),
+      title: values.title,
+      description: values.description,
+      imageUrl: values.imageURL,
+      authorId: values.author,
+      content: values.content,
+    },
+  });
+
+  console.log("Blog post created successfully");
+
+  revalidatePath("/blog", "page");
+  redirect("/blog");
 }
