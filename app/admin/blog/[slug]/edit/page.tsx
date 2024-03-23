@@ -24,18 +24,22 @@ export default async function EditBlogPage({ params : { slug } }: { params: { sl
     return <div>Blog post not found</div>
   }
 
-  return <EditBlogForm
-  authors={authors}
-  slug={slug}
-  values={{
-    title: blogPost.title,
-    content: blogPost.content,
-    description: blogPost.description,
-    imageURL: blogPost.imageUrl,
-    author: {
-      id: blogPost.author.id,
-      email: blogPost.author.email
-    }
-  }}
-  />;
+  return (
+    <div className="container mx-auto">
+      <EditBlogForm
+        authors={authors}
+        slug={slug}
+        values={{
+          title: blogPost.title,
+          content: blogPost.content,
+          description: blogPost.description,
+          imageURL: blogPost.imageUrl,
+          author: {
+            id: blogPost.author.id,
+            email: blogPost.author.email
+          }
+        }}
+        />
+    </div>
+  )
 }

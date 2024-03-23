@@ -4,5 +4,8 @@ import prisma from "@/lib/prisma";
 export default async function NewBlogPage() {
   const authors = await prisma.author.findMany();
 
-  return <NewBlogForm authors={authors} />;
+  return (
+    <div className="container mx-auto">
+  <NewBlogForm authors={authors} />
+  </div>)
 }
