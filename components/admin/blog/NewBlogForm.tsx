@@ -12,20 +12,29 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
+  FormDescription,
 } from "@/components/ui/form";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+} from "@/components/ui/command"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import * as z from "zod";
 import { createBlogPost } from "@/lib/actions/blog-actions";
+import { CheckIcon, SortAscIcon } from "lucide-react";
+import { Author } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
-export default function NewBlogPostForm({ authors }: { authors: any }) {
+export default function NewBlogPostForm({ authors }: { authors: Author[] }) {
   const form = useForm<z.infer<typeof newBlogPostFormSchema>>({
     resolver: zodResolver(newBlogPostFormSchema),
     defaultValues: {
@@ -96,30 +105,69 @@ export default function NewBlogPostForm({ authors }: { authors: any }) {
             </FormItem>
           )}
         />
-        <FormField
+<FormField
           control={form.control}
           name="author"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a verified email to display" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  {authors.map((author: any) => (
-                    <SelectItem key={author.email} value={author.email}>
-                      {author.email}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+            <FormItem className="flex flex-col">
+              <FormLabel>Author</FormLabel>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <FormControl>
+                    <Button
+                      variant="outline"
+                      role="combobox"
+                      className={cn(
+                        "w-[200px] justify-between",
+                        !field.value && "text-muted-foreground"
+                      )}
+                    >
+                      {field.value
+                        ? authors.find(
+                            (author) => author.id === field.value
+                          )?.email
+                        : "Select author"}
+                      <SortAscIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                    </Button>
+                  </FormControl>
+                </PopoverTrigger>
+                <PopoverContent className="w-[200px] p-0">
+                  <Command>
+                    <CommandInput placeholder="Search author..." />
+                    <CommandEmpty>No author found.</CommandEmpty>
+                    <CommandGroup>
+                      {authors.map((author) => (
+                        console.log(author),
+                        <CommandItem
+                          value={author.id}
+                          key={author.id}
+                          onSelect={() => {
+                            form.setValue("author", author.id)
+                          }}
+                        >
+                          <CheckIcon
+                            className={cn(
+                              "mr-2 h-4 w-4",
+                              author.id === field.value
+                                ? "opacity-100"
+                                : "opacity-0"
+                            )}
+                          />
+                          {author.email}
+                        </CommandItem>
+                      ))}
+                    </CommandGroup>
+                  </Command>
+                </PopoverContent>
+              </Popover>
+              <FormDescription>
+                This is the author that will be used in the dashboard.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
+        
         <Button type="submit">Submit</Button>
       </form>
     </Form>

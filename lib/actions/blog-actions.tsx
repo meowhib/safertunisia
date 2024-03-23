@@ -4,6 +4,8 @@ import prisma from "@/lib/prisma";
 import { newBlogPostFormSchema } from "../validations";
 import * as z from "zod";
 import slugify from "slugify";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export async function getAllBlogPosts() {
   const blogPosts = await prisma.blog.findMany({
@@ -33,7 +35,8 @@ export async function deleteBlogPost(slug: string) {
   });
 
   console.log("Blog post deleted successfully");
-  return true;
+  revalidatePath("/blog");
+  redirect("/blog");
 }
 
 export async function updateBlogPost(
@@ -58,7 +61,8 @@ export async function updateBlogPost(
   });
 
   console.log("Blog post updated successfully");
-  return true;
+  revalidatePath(`/blog`);
+  redirect(`/blog`);
 }     
 
 export async function createBlogPost(
@@ -79,5 +83,5 @@ export async function createBlogPost(
   });
 
   console.log("Blog post created successfully");
-  return true;
+  redirect("/blog");
 }

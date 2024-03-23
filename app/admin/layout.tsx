@@ -2,22 +2,24 @@ import { getServerSession } from "next-auth"
 import { authOptions } from "@/lib/authOptions"
 import { redirect } from "next/navigation"
 
-export default async function Admin() {
+export default async function AdminLayout({ children } : { children: React.ReactNode }) {
   const session = await getServerSession(authOptions)
 
   if (!session) {
-    redirect("/login")
+    redirect("/api/auth/signin")
   }
 
   if (!session.user || !session.user?.email) {
-    redirect("/login")
+    redirect("/api/auth/signin")
   }
   
   if (!session.user?.email.endsWith("@safertunisia.com")) {
-    redirect("/login")
+    redirect("/api/auth/signin")
   }
 
   return (
-    <h1>Admin</h1>
+    <div>
+      {children}
+    </div>
   )
 }
