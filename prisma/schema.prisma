@@ -29,7 +29,7 @@ model Author {
   id    String   @id @default(cuid())
   name  String
   imageUrl String?
-  email String? @unique
+  email String @unique
   password String
   role  String?
   blogs Blog[]

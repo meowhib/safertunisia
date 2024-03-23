@@ -17,7 +17,6 @@ export default async function BlogPage() {
   }
 
   const blogs = await getAllBlogs();
-  console.log(blogs);
 
   return (
     <div className="bg-white py-12 sm:py-16">

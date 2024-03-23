@@ -105,8 +105,6 @@ export default async function BlogPage({
 
   const { title, description, content } = blog;
 
-  console.log(blog);
-
   return (
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <article className="py-12">
@@ -118,7 +116,7 @@ export default async function BlogPage({
         <div className="mt-8 flex flex-row">
           <div className="flex items-center gap-x-4 text-xs">
             <img
-              src={blog.author.imageUrl}
+              src={blog.author.imageUrl || ""}
               alt=""
               className="w-10 h-10 rounded-full"
             />
