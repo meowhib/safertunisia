@@ -35,7 +35,7 @@ export default async function BlogPage() {
           {blogs.map((post) => (
             <article
               key={post.slug}
-              className="flex flex-col items-start justify-between"
+              className="flex flex-col"
             >
               <div className="relative w-full">
                 <img

@@ -9,37 +9,37 @@ export default async function BlogPage({
 }) {
   const components = {
     h1: (props: any) => (
-      <h1 {...props} className="text-4xl font-bold">
+      <h1 {...props} className="text-4xl font-bold mt-8">
         {props.children}
       </h1>
     ),
     h2: (props: any) => (
-      <h2 {...props} className="text-3xl font-bold">
+      <h2 {...props} className="text-3xl font-bold mt-8">
         {props.children}
       </h2>
     ),
     h3: (props: any) => (
-      <h3 {...props} className="text-2xl font-bold">
+      <h3 {...props} className="text-2xl font-bold mt-8">
         {props.children}
       </h3>
     ),
     h4: (props: any) => (
-      <h4 {...props} className="text-xl font-bold">
+      <h4 {...props} className="text-xl font-bold mt-8">
         {props.children}
       </h4>
     ),
     h5: (props: any) => (
-      <h5 {...props} className="text-lg font-bold">
+      <h5 {...props} className="text-lg font-bold mt-8">
         {props.children}
       </h5>
     ),
     h6: (props: any) => (
-      <h6 {...props} className="text-base font-bold">
+      <h6 {...props} className="text-base font-bold mt-8">
         {props.children}
       </h6>
     ),
     p: (props: any) => (
-      <p {...props} className="text-lg leading-8 text-gray-600">
+      <p {...props} className="text-lg leading-8 text-gray-800 mt-4">
         {props.children}
       </p>
     ),
@@ -49,17 +49,17 @@ export default async function BlogPage({
       </a>
     ),
     ul: (props: any) => (
-      <ul {...props} className="list-disc list-inside">
+      <ul {...props} className="list-disc list-inside list-disc mt-4">
         {props.children}
       </ul>
     ),
     ol: (props: any) => (
-      <ol {...props} className="list-decimal list-inside">
+      <ol {...props} className="list-decimal list-inside list-decimal mt-4">
         {props.children}
       </ol>
     ),
     li: (props: any) => (
-      <li {...props} className="text-lg leading-8 text-gray-600">
+      <li {...props} className="text-lg leading-8 list-inside text-gray-800">
         {props.children}
       </li>
     ),
