@@ -19,6 +19,20 @@ export async function getAllBlogPosts() {
   return blogPosts;
 }
 
+export async function getLatestBlogPosts() {
+  const blogPosts = await prisma.blog.findMany({
+    include: {
+      author: true,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+    take: 3,
+  });
+
+  return blogPosts;
+}
+
 export async function getBlogPostBySlug(slug: string) {
   const blogPost = await prisma.blog.findFirst({
     where: {
@@ -52,6 +66,7 @@ export async function deleteBlogPost(slug: string) {
 
   console.log("Blog post deleted successfully");
   revalidatePath("/blog", "page");
+  revalidatePath("/", "page");
   redirect("/blog");
 }
 
@@ -92,6 +107,7 @@ export async function updateBlogPost(
 
   console.log("Blog post updated successfully");
   revalidatePath("/blog", "page");
+  revalidatePath("/", "page");
   redirect("/blog");
 }
 
@@ -129,5 +145,6 @@ export async function createBlogPost(
   console.log("Blog post created successfully");
 
   revalidatePath("/blog", "page");
+  revalidatePath("/", "page");
   redirect("/blog");
 }
