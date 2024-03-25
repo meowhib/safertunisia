@@ -1,5 +1,11 @@
 import CTA3 from "@/components/landing/CTA3";
 import { BedIcon, PlaneIcon, ShieldCheckIcon, WifiIcon } from "lucide-react";
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Digital nomads | Safer Tunisia",
+  description: "Live your nomad life in Tunisia",
+};
 
 const perks = [
   {

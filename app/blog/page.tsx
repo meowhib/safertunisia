@@ -1,5 +1,11 @@
 import prisma from "@/lib/prisma";
 import Link from "next/link";
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog | Safer Tunisia",
+  description: "Learn how to make the most out of Djerba and South Tunisia as a digital nomad. From the best coworking spaces to the most beautiful beaches, we have you covered.",
+};
 
 export default async function BlogPage() {
   async function getAllBlogs() {

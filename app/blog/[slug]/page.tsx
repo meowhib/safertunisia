@@ -1,6 +1,25 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import prisma from "@/lib/prisma";
 import { redirect } from "next/navigation";
+import { type Metadata } from "next";
+import { getBlogPostBySlug } from "@/lib/actions/blog-actions";
+
+type Props = {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const blog = await getBlogPostBySlug(params.slug);
+
+  return {
+    title: blog?.title,
+    description: blog?.description,
+  };
+}
 
 export default async function BlogPage({
   params,
@@ -77,7 +96,6 @@ export default async function BlogPage({
         className="my-8 w-full rounded-2xl bg-gray-100 object-cover aspect-[16/9] sm:aspect-[2/1] lg:aspect-[3/2]"
       />
     ),
-
   };
 
   async function getBlogBySlug(slug: string) {
