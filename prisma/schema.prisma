@@ -34,3 +34,21 @@ model Author {
   role  String?
   blogs Blog[]
 }
+
+model Products {
+  id   String   @id @default(cuid())
+  name String
+  type String 
+  description String
+  duration String
+  difficulty String
+  minAge Int
+  imageUrl String
+  requirements String
+  price Float
+  date String //Tfahemna n5aloha string mouch date
+  location String
+  gallery String[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
