@@ -60,6 +60,10 @@ export async function createActivity({
       },
     });
 
+    if (!activity) {
+      return { status: 404, data: [] };
+    }
+
     return { status: 200, data: activity };
   } catch (error) {
     return { status: 500, data: null };

@@ -1,26 +1,26 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
+import { ProductProps } from "@/lib/types";
 
-export interface ActivityProps {
-  destination: string;
-  country: string;
-  description: string;
-  duration: string;
-  price: number;
-}
-
-export default function Activity({
-  destination,
-  country,
+export default function Product({
+  name,
+  type,
   description,
   duration,
+  difficulty,
+  minAge,
+  imageUrl,
+  requirements,
   price,
-}: ActivityProps) {
+  date,
+  location,
+  gallery,
+}: ProductProps) {
   return (
     <div className="bg-white rounded-xl shadow-xl flex-col overflow-hidden">
-      <Image
+      <img
         className="aspect-video w-full"
-        src="/hero-image.png"
+        src={imageUrl}
         alt="hero image"
         width={600}
         height={338}
@@ -30,8 +30,8 @@ export default function Activity({
           <p className="text-md leading-8 text-gray-600">{duration}</p>
         </div>
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">{destination}</h2>
-          <p className="text-lg leading-8 text-gray-600">{country}</p>
+          <h2 className="text-2xl font-bold text-gray-900">{name}</h2>
+          <p className="text-lg leading-8 text-gray-600">{location}</p>
         </div>
         <p className="text-md text-gray-600">{description}</p>
         <div className="grid grid-flow-col justify-stretch">

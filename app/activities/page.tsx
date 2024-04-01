@@ -1,4 +1,7 @@
+import Product from "@/components/Product";
 import CTA3 from "@/components/landing/CTA3";
+import { getAllActivities } from "@/lib/actions/activities-actions";
+import { ProductProps } from "@/lib/types";
 import { BedIcon, PlaneIcon, ShieldCheckIcon, WifiIcon } from "lucide-react";
 import { type Metadata } from "next";
 
@@ -7,7 +10,9 @@ export const metadata: Metadata = {
   description: "Start you activities in Tunisia",
 };
 
-export default function Page() {
+export default async function Page() {
+  const productsAction = await getAllActivities();
+
   return (
     <div>
       <div
@@ -19,7 +24,36 @@ export default function Page() {
         <h1 className="text-4xl font-bold text-white absolute">Our packages</h1>
       </div>
       <div className="py-12 space-y-8 px-8 md:px-24">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {productsAction.status === 200 && productsAction.data ? (
+            productsAction.data.map((product: ProductProps) => (
+              <Product
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                type={product.type}
+                description={product.description}
+                duration={product.duration}
+                difficulty={product.difficulty}
+                minAge={product.minAge}
+                imageUrl={product.imageUrl}
+                requirements={product.requirements}
+                price={product.price}
+                date={product.date}
+                location={product.location}
+                gallery={product.gallery}
+              />
+            ))
+          ) : productsAction.status === 404 ? (
+            <div className="text-center text-gray-600">
+              <p>No activities available</p>
+            </div>
+          ) : (
+            <div className="text-center text-gray-600">
+              <p>Failed to load activities</p>
+            </div>
+          )}
+        </div>
         <CTA3 />
       </div>
     </div>

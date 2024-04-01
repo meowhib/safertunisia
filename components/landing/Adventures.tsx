@@ -1,5 +1,5 @@
-import Activity from "../Activity";
-import { ActivityProps } from "../Activity";
+import Activity from "../Product";
+import { ActivityProps } from "../Product";
 import ActivitiesCarousel from "./ActivitiesCarousel";
 
 export default function Adventures() {

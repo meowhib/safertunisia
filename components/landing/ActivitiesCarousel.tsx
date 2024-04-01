@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import Activity, { ActivityProps } from "../Activity";
+import Activity, { ActivityProps } from "../Product";
 
 export default function ActivitiesCarousel({
   activities,
