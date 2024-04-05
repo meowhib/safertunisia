@@ -1,7 +1,7 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import prisma from "@/lib/prisma";
 import { redirect } from "next/navigation";
-import { type Metadata } from "next";
+import { ResolvingMetadata, type Metadata } from "next";
 import { getBlogPostBySlug } from "@/lib/actions/blog-actions";
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 
 export async function generateMetadata(
   { params, searchParams }: Props,
-  parent: ResolvingMetadata,
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const blog = await getBlogPostBySlug(params.slug);
 

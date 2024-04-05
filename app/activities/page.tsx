@@ -24,35 +24,41 @@ export default async function Page() {
         <h1 className="text-4xl font-bold text-white absolute">Our packages</h1>
       </div>
       <div className="py-12 space-y-8 px-8 md:px-24">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {productsAction.status === 200 && productsAction.data ? (
-            productsAction.data.map((product: ProductProps) => (
-              <Product
-                key={product.id}
-                id={product.id}
-                name={product.name}
-                type={product.type}
-                description={product.description}
-                duration={product.duration}
-                difficulty={product.difficulty}
-                minAge={product.minAge}
-                imageUrl={product.imageUrl}
-                requirements={product.requirements}
-                price={product.price}
-                date={product.date}
-                location={product.location}
-                gallery={product.gallery}
-              />
-            ))
-          ) : productsAction.status === 404 ? (
-            <div className="text-center text-gray-600">
-              <p>No activities available</p>
-            </div>
-          ) : (
-            <div className="text-center text-gray-600">
-              <p>Failed to load activities</p>
-            </div>
-          )}
+        <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-4">
+            <h1 className="text-3xl font-bold">Filter</h1>
+            <div className=""></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 col-span-8">
+            {productsAction.status === 200 && productsAction.data ? (
+              productsAction.data.map((product: ProductProps) => (
+                <Product
+                  key={product.id}
+                  id={product.id}
+                  name={product.name}
+                  type={product.type}
+                  description={product.description}
+                  duration={product.duration}
+                  difficulty={product.difficulty}
+                  minAge={product.minAge}
+                  imageUrl={product.imageUrl}
+                  requirements={product.requirements}
+                  price={product.price}
+                  date={product.date}
+                  location={product.location}
+                  gallery={product.gallery}
+                />
+              ))
+            ) : productsAction.status === 404 ? (
+              <div className="text-center text-gray-600">
+                <p>No activities available</p>
+              </div>
+            ) : (
+              <div className="text-center text-gray-600">
+                <p>Failed to load activities</p>
+              </div>
+            )}
+          </div>
         </div>
         <CTA3 />
       </div>
