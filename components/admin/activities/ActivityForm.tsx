@@ -103,8 +103,8 @@ export default function NewActivityForm() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="activity">Activity</SelectItem>
-                    <SelectItem value="trip">Trip</SelectItem>
+                    <SelectItem value="Activity">Activity</SelectItem>
+                    <SelectItem value="Trip">Trip</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -164,9 +164,9 @@ export default function NewActivityForm() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="easy">Easy</SelectItem>
-                    <SelectItem value="medium">Medium</SelectItem>
-                    <SelectItem value="hard">Hard</SelectItem>
+                    <SelectItem value="Easy">Easy</SelectItem>
+                    <SelectItem value="Medium">Medium</SelectItem>
+                    <SelectItem value="Hard">Hard</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />

@@ -10,12 +10,13 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import Activity, { ActivityProps } from "../Product";
+import Product from "../Product";
+import { ProductProps } from "@/lib/types";
 
 export default function ActivitiesCarousel({
   activities,
 }: {
-  activities: ActivityProps[];
+  activities: ProductProps[];
 }) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
@@ -46,7 +47,7 @@ export default function ActivitiesCarousel({
         {activities.map((activity, index) => (
           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
             <div className="p-1">
-              <Activity {...activity} />
+              <Product {...activity} />
             </div>
           </CarouselItem>
         ))}

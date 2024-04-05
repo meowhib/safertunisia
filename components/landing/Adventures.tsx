@@ -1,50 +1,23 @@
-import Activity from "../Product";
-import { ActivityProps } from "../Product";
+import Product from "../Product";
+import { ProductProps } from "@/lib/types";
 import ActivitiesCarousel from "./ActivitiesCarousel";
 
 export default function Adventures() {
-  const activities: ActivityProps[] = [
+  const activities: ProductProps[] = [
     {
-      destination: "Mountain Hiking",
-      country: "Nepal",
-      description: "Hike through the beautiful Himalayas",
-      duration: "7 days",
-      price: 1500,
-    },
-    {
-      destination: "Beach Yoga",
-      country: "Thailand",
-      description: "Relax and rejuvenate on the beaches of Thailand",
-      duration: "10 days",
-      price: 2000,
-    },
-    {
-      destination: "Desert Safari",
-      country: "Morocco",
-      description: "Experience the Sahara desert on a camel",
-      duration: "5 days",
-      price: 1000,
-    },
-    {
-      destination: "City Tour",
-      country: "Italy",
-      description: "Explore the ancient ruins of Rome",
-      duration: "3 days",
-      price: 800,
-    },
-    {
-      destination: "Wildlife Safari",
-      country: "Kenya",
-      description: "See the big five in their natural habitat",
-      duration: "14 days",
-      price: 3000,
-    },
-    {
-      destination: "Cultural Tour",
-      country: "India",
-      description: "Experience the rich culture of India",
-      duration: "7 days",
-      price: 1500,
+      id: "1",
+      name: "Hiking",
+      type: "Outdoor",
+      description: "Hiking in the mountains",
+      duration: "1 day",
+      difficulty: "Medium",
+      minAge: 12,
+      imageUrl: "/hero-image.png",
+      requirements: "Good shoes",
+      price: 100,
+      date: "2022-10-10",
+      location: "Mountain",
+      gallery: ["/hero-image.png"],
     },
   ];
 
