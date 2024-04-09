@@ -24,7 +24,7 @@ const products = [
   {
     name: "List",
     description: "Book your next trip with us",
-    href: "#",
+    href: "/activities",
     icon: PhoneIcon,
   },
   // {

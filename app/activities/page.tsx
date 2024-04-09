@@ -1,3 +1,4 @@
+import ActivitiesFilter from "@/components/ActivitiesFilter";
 import Product from "@/components/Product";
 import CTA3 from "@/components/landing/CTA3";
 import { getAllActivities } from "@/lib/actions/activities-actions";
@@ -24,12 +25,16 @@ export default async function Page() {
         <h1 className="text-4xl font-bold text-white absolute">Our packages</h1>
       </div>
       <div className="py-12 space-y-8 px-8 md:px-24">
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-4">
+        {/* <div className="grid grid-cols-12 gap-4"> */}
+        <div>
+          {/* <div className="col-span-4">
             <h1 className="text-3xl font-bold">Filter</h1>
-            <div className=""></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 col-span-8">
+            <div>
+              <ActivitiesFilter />
+            </div>
+          </div> */}
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4 col-span-8"> */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {productsAction.status === 200 && productsAction.data ? (
               productsAction.data.map((product: ProductProps) => (
                 <Product
