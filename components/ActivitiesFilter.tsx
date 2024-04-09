@@ -36,7 +36,7 @@ export default function ActivitiesFilter() {
         >
         {
           activityTypes.map((type) => (
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2" key={type}>
               <RadioGroupItem value={type} id={type} />
               <Label htmlFor={type} className="capitalize">{type}</Label>
             </div>
@@ -53,7 +53,7 @@ export default function ActivitiesFilter() {
         >
         {
           difficultyLevels.map((type) => (
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2" key={type}>
               <RadioGroupItem value={type} id={type} />
               <Label htmlFor={type} className="capitalize">{type}</Label>
             </div>

@@ -105,7 +105,13 @@ export default function Navbar() {
           >
             Digital Nomads
           </Link>
-          <Popover className="relative">
+          <Link
+            href="/activities"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
+            Activities & trips
+          </Link>
+          {/* <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
               Activities & trips
               <ChevronDownIcon
@@ -166,7 +172,7 @@ export default function Navbar() {
                 </div>
               </Popover.Panel>
             </Transition>
-          </Popover>
+          </Popover> */}
           <Link
             href="/blog"
             className="text-sm font-semibold leading-6 text-gray-900"
