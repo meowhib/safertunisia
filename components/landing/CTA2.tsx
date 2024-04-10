@@ -23,10 +23,10 @@ export default function CTA2() {
           Start your life in Djerba
         </h2>
         <h2 className="text-4xl font-bold tracking-tight text-white sm:text-4xl drop-shadow-md">
-          In Djerba as Digial Nomad ?
+          In Djerba as Digial Nomad?
         </h2>
         <p className="mt-6 text-lg leading-8 text-gray-100 drop-shadow-md">
-          Accomandation, Co-working spaces, Transports, Activities, and more...
+        Accommodation, coworking spaces, transportation, activities, and more...
         </p>
         <Link href="/contact">
           <Button className="mt-8">Contact us</Button>

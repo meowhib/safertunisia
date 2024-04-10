@@ -6,22 +6,22 @@ export default function Sponsors() {
     {
       name: "Sponsor 1",
       image: "/sponsor1.png",
-      href: "#",
+      href: "https://kiteaventure.com/",
     },
     {
       name: "Sponsor 2",
       image: "/sponsor1.png",
-      href: "#",
+      href: "https://kiteaventure.com/",
     },
     {
       name: "Sponsor 3",
       image: "/sponsor1.png",
-      href: "#",
+      href: "https://kiteaventure.com/",
     },
     {
       name: "Sponsor 4",
       image: "/sponsor1.png",
-      href: "#",
+      href: "https://kiteaventure.com/",
     },
   ];
 
@@ -30,10 +30,10 @@ export default function Sponsors() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-24">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Our sponsors
+            Our partners
           </h2>
           <p className="mt-2 text-lg leading-8 text-gray-600">
-            This is possible thanks to our sponsors
+            This is possible thanks to our parners. We are grateful for their support.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-32">

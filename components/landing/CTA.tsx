@@ -4,17 +4,13 @@ export default function CTA() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <p className="text-base font-semibold leading-7 text-primary">
-            The Nomad Destination ?
+          The Newest Nomad Destination?
           </p>
           <h2 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Djerba ! Digital Nomads
+            Djerba! Digital Nomads
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Stay, Connectivity & Coworkings, Safety, Activities... Plan and book
-            your adventure all in one place! We offer a comprehensive online
-            guide for free. Get in touch with one of our team members for
-            personalized advice about Djerba & South Tunisia. Additionally,
-            discover and book all activities at great prices.
+          Accomodations, connectivity & coworking, activities, and culture... Learn about Djerba as a digital nomad destination and plan your adventure all in one place! We offer a free comprehensive online guide about Djerba as a remote work destination. You can discover and book activities at great prices or get in touch with one of our team members for personalized advice! Whatever you need as a digital nomad considering Djerba, we’re here to help!
           </p>
         </div>
       </div>

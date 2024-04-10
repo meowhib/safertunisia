@@ -12,7 +12,7 @@ export default async function BlogSection() {
             Our blog
           </h2>
           <p className="mt-2 text-lg leading-8 text-gray-600">
-            Learn how to enjoy your trip and work in Djerba
+          Learn about Djerba from travelers like yourself! The activities they love, tips on how to get around, and info about life on the island.
           </p>
         </div>
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">

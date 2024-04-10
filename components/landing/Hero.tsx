@@ -24,7 +24,7 @@ export default function Hero() {
             Discover Djerba & South Tunisia
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-100 drop-shadow-md">
-            Free online guide, Booking activities, Digital nomads guide,...
+            Free online guide, activity booking, information for digital nomads, and more
           </p>
         </div>
         <SearchForm />
