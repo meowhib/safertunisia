@@ -39,7 +39,7 @@ export default function GuidePage(){
         <div>
             <div
                 style={{
-                backgroundImage: "url('/hero-image.png')",
+                backgroundImage: "url(&apos;/hero-image.png&apos;)",
                 }}
                 className="h-96 bg-cover bg-center flex justify-center items-center relative"
             >
@@ -65,9 +65,9 @@ export default function GuidePage(){
             <h2 className="text-3xl font-bold mt-8">Where is Djerba?</h2>
             <p className="text-lg leading-8 text-gray-800 mt-4">Djerba is a large Mediterranean island, located in the South of Tunisia off the Northern coast of Africa. Approximately 20 km2, the island has an average temperature of 23° degrees and over 80km of beaches. </p>
             <h2 className="text-3xl font-bold mt-8">Why Visit Djerba?</h2>
-            <p className="text-lg leading-8 text-gray-800 mt-4">Djerba has enchanted visitors since antiquity, tempting even itinerant Ulysses to end his travels and settle down. Known for its rich and diverse culture, Djerba is nicknamed “The Land of Peace and Tolerance,” where Muslims, Jews, and Christians have lived side by side for centuries. The island's streets are filled with distinctive blue and white architecture, with fanciful domes, square houses, and elaborate doors accented with the bright magenta of bougainvillea.</p>
-            <p className="text-lg leading-8 text-gray-800 mt-4">Boasting a warm climate year-round, pristine white sand sand beaches, and affordable prices, Djerba is a wanderer's paradise. The island offers a wide variety of activities, whether you're looking for adventure, relaxation, or culture.</p>
-            <p className="text-lg leading-8 text-gray-800 mt-4">There's no shortage of activities…
+            <p className="text-lg leading-8 text-gray-800 mt-4">Djerba has enchanted visitors since antiquity, tempting even itinerant Ulysses to end his travels and settle down. Known for its rich and diverse culture, Djerba is nicknamed “The Land of Peace and Tolerance,” where Muslims, Jews, and Christians have lived side by side for centuries. The island&apos;s streets are filled with distinctive blue and white architecture, with fanciful domes, square houses, and elaborate doors accented with the bright magenta of bougainvillea.</p>
+            <p className="text-lg leading-8 text-gray-800 mt-4">Boasting a warm climate year-round, pristine white sand sand beaches, and affordable prices, Djerba is a wanderer&apos;s paradise. The island offers a wide variety of activities, whether you&apos;re looking for adventure, relaxation, or culture.</p>
+            <p className="text-lg leading-8 text-gray-800 mt-4">There&apos;s no shortage of activities…
                 Delve into the history and culture of Djerba
                 Affordable, culture, food
                 Gateway to Southern Tunisia
@@ -81,7 +81,7 @@ export default function GuidePage(){
             <p className="text-lg leading-8 text-gray-800 mt-4">For a dose of culture</p>
             <p className="text-lg leading-8 text-gray-800 mt-4">Visit Synagogue Ghriba, the oldest synagogue in Africa and an active pilgrimage site for Jews around the world.</p>
             <p className="text-lg leading-8 text-gray-800 mt-4">Head to Ghazi Mustapha Tower, an impressive fortress built in the 14th century, which became instrumental in the French occupation of Djerba. Today, it is a museum about Djerba history through the colonial period until independence.</p>
-            <p className="text-lg leading-8 text-gray-800 mt-4">If you're feeling adventurous</p>
+            <p className="text-lg leading-8 text-gray-800 mt-4">If you&apos;re feeling adventurous</p>
             <p className="text-lg leading-8 text-gray-800 mt-4">Enhance your time on the water with a shot of adrenaline and a dose of wonder; try your hand at kitesurfing, paddle boarding, or kayaking, Quad,...</p>
             <p className="text-lg leading-8 text-gray-800 mt-4">Marvel at the olive and palm groves as you zoom around the island on a quad bike safari</p>
             <p className="text-lg leading-8 text-gray-800 mt-4">Explore surrounding sites on a day trip</p>
@@ -94,15 +94,15 @@ export default function GuidePage(){
 
             <p className="text-lg leading-8 text-gray-800 mt-4">Embark on a captivating journey through the diverse and welcoming community of Djerba, where centuries-old traditions and a harmonious blend of religions create a tapestry of cultural richness.</p>
 
-            <p className="text-lg leading-8 text-gray-800 mt-4">Begin your adventure by immersing yourself in the island's religious diversity, where mosques, synagogues, and churches stand side by side, symbolizing unity and coexistence. Explore the underground mosques, hidden gems that offer a glimpse into the island's spiritual heritage, and marvel at the historic Ghriba Synagogue, a testament to Djerba's Jewish roots.</p>
+            <p className="text-lg leading-8 text-gray-800 mt-4">Begin your adventure by immersing yourself in the island&apos;s religious diversity, where mosques, synagogues, and churches stand side by side, symbolizing unity and coexistence. Explore the underground mosques, hidden gems that offer a glimpse into the island&apos;s spiritual heritage, and marvel at the historic Ghriba Synagogue, a testament to Djerba&apos;s Jewish roots.</p>
 
             <p className="text-lg leading-8 text-gray-800 mt-4">Continue your exploration into the heart of the old medina, where the enchanting church in Houmet Essouk awaits, its ancient walls whispering tales of bygone eras. Wander through narrow alleyways lined with colorful stalls and aromatic street food vendors, immersing yourself in the vibrant atmosphere of the bustling markets.</p>
 
             <p className="text-lg leading-8 text-gray-800 mt-4">Indulge your senses in the tantalizing flavors of Djerbian cuisine, from savory brik and fresh seafood to aromatic spices and traditional pastries. Venture into the Jewish quarter, where charming street restaurants beckon with mouthwatering dishes and warm hospitality, offering a true taste of local life.</p>
 
-            <p className="text-lg leading-8 text-gray-800 mt-4">As the sun sets, witness the bustling energy of the local markets, where artisans showcase their craftsmanship and vendors peddle an array of treasures, from handwoven textiles to fragrant spices. Experience the timeless traditions of Djerba's people, from colorful weddings filled with music and dance to age-old rituals that celebrate the bonds of family and community.</p>
+            <p className="text-lg leading-8 text-gray-800 mt-4">As the sun sets, witness the bustling energy of the local markets, where artisans showcase their craftsmanship and vendors peddle an array of treasures, from handwoven textiles to fragrant spices. Experience the timeless traditions of Djerba&apos;s people, from colorful weddings filled with music and dance to age-old rituals that celebrate the bonds of family and community.</p>
 
-            <p className="text-lg leading-8 text-gray-800 mt-4">In Djerba, every corner tells a story, every meal is an adventure, and every moment is a celebration of life's vibrant tapestry. Come and discover the magic of this enchanting island, where diversity is celebrated, and every experience is an invitation to explore, indulge, and savor the beauty of Djerba's cultural mosaic.</p>
+            <p className="text-lg leading-8 text-gray-800 mt-4">In Djerba, every corner tells a story, every meal is an adventure, and every moment is a celebration of life&apos;s vibrant tapestry. Come and discover the magic of this enchanting island, where diversity is celebrated, and every experience is an invitation to explore, indulge, and savor the beauty of Djerba&apos;s cultural mosaic.</p>
 
 
             Costs & Budget
