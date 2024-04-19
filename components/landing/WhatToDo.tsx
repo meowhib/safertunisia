@@ -26,9 +26,8 @@ export default function WhatDoTo() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mx-auto max-w-7xl py-8 px-6 lg:px-8">
       {whatToDo.map((item, index) => (
-        <Link href={item.href}>
+        <Link href={item.href} key={index}>
           <div
-            key={index}
             className="h-32 bg-gray-200 rounded-2xl flex items-center justify-center relative"
           >
             <Image

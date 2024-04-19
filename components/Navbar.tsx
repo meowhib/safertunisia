@@ -73,12 +73,10 @@ export default function Navbar() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Safer Tunisia</span>
-            <Image
+            <img
               className="h-8 w-auto"
               src="/logosafertunisia.png"
               alt="logo safer tunisia"
-              width={200}
-              height={200}
             />
           </Link>
         </div>
@@ -202,12 +200,10 @@ export default function Navbar() {
               <span className="sr-only">Eatourist</span>
               <Link href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Safer Tunisia</span>
-                <Image
+                <img
                   className="h-8 w-auto"
                   src="/logosafertunisia.png"
                   alt="logo safer tunisia"
-                  width={200}
-                  height={200}
                 />
               </Link>
             </Link>

@@ -22,6 +22,7 @@ export default function Home() {
       <Adventures />
       <CTA2 />
       <BlogSection />
+      <ChatBanner />
       <Sponsors />
     </>
   );

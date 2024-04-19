@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 const navigation = {
   locations: [
     { name: 'Djerba, Tunisia', href: '#' },
