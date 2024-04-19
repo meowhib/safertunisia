@@ -39,7 +39,7 @@ export default function GuidePage(){
         <div>
             <div
                 style={{
-                backgroundImage: "url(&apos;/hero-image.png&apos;)",
+                backgroundImage: "url('/hero-image.png')",
                 }}
                 className="h-96 bg-cover bg-center flex justify-center items-center relative"
             >
@@ -147,7 +147,7 @@ export default function GuidePage(){
 
             <p className="text-lg leading-8 text-gray-800 mt-4">-Buses are also available between the main towns, although service is only 3-6 times per day. Download bus time</p>
 
-            <p className="text-lg leading-8 text-gray-800 mt-4">-Bicycle and scooter rental is also available at affordable prices [link of activities]</p>
+            <p className="text-lg leading-8 text-gray-800 mt-4">-Bicycle and scooter rental is also available at affordable prices <Link className="no-underline text-blue-600 hover:underline" href={"/activities"}>Click here to see activities</Link></p>
 
             <h2 className="text-3xl font-bold mt-8">Where to Stay</h2>
             <p className="text-lg leading-8 text-gray-800 mt-4">The island offers accommodations appropriate for all budgets.</p>

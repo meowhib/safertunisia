@@ -6,6 +6,7 @@ import CTA2 from "@/components/landing/CTA2";
 import BlogSection from "@/components/landing/BlogSection";
 import Sponsors from "@/components/landing/Sponsors";
 import { type Metadata } from "next";
+import ChatBanner from "@/components/ChatBanner";
 
 export const metadata: Metadata = {
   title: "Safer Tunisia",

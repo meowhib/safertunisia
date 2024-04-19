@@ -36,7 +36,7 @@ export default function Page() {
     <div>
       <div
         style={{
-          backgroundImage: "url(&apos;/hero-image.png&apos;)",
+          backgroundImage: "url('/hero-image.png')",
         }}
         className="h-96 bg-cover bg-center flex justify-center items-center relative"
       >

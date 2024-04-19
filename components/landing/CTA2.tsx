@@ -28,7 +28,7 @@ export default function CTA2() {
         <p className="mt-6 text-lg leading-8 text-gray-100 drop-shadow-md">
         Accommodation, coworking spaces, transportation, activities, and more...
         </p>
-        <Link href="/contact">
+        <Link href="mailto:contact@safertunisia.com">
           <Button className="mt-8">Contact us</Button>
         </Link>
       </div>
