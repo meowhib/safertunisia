@@ -21,8 +21,19 @@ export async function getAllBlogPosts() {
 
 export async function getLatestBlogPosts() {
   const blogPosts = await prisma.blog.findMany({
-    include: {
-      author: true,
+    select: {
+      title: true,
+      description: true,
+      imageUrl: true,
+      slug: true,
+      createdAt: true,
+      author: {
+        select: {
+          name: true,
+          role: true,
+          imageUrl: true,
+        },
+      },
     },
     orderBy: {
       createdAt: "desc",

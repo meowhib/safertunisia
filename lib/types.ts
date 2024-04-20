@@ -29,3 +29,16 @@ export type ProductProps = {
   location: string;
   gallery: string[];
 };
+
+export type BlogProps = {
+  slug: string;
+  title: string;
+  description: string;
+  imageUrl: string | null;
+  author: {
+    name: string;
+    role: string | null;
+    imageUrl: string | null;
+  };
+  createdAt: Date;
+};
