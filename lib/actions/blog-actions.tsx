@@ -75,7 +75,6 @@ export async function deleteBlogPost(slug: string) {
     },
   });
 
-  console.log("Blog post deleted successfully");
   revalidatePath("/blog", "page");
   revalidatePath("/", "page");
   redirect("/blog");
@@ -116,7 +115,6 @@ export async function updateBlogPost(
     },
   });
 
-  console.log("Blog post updated successfully");
   revalidatePath("/blog", "page");
   revalidatePath("/", "page");
   redirect("/blog");
@@ -152,8 +150,6 @@ export async function createBlogPost(
       content: values.content,
     },
   });
-
-  console.log("Blog post created successfully");
 
   revalidatePath("/blog", "page");
   revalidatePath("/", "page");
