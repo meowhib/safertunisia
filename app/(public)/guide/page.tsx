@@ -89,7 +89,7 @@ export default function GuidePage(){
             <p className="text-lg leading-8 text-gray-800 mt-4">For a full overview of activities, visit our <Link className="no-underline text-blue-600 hover:underline" href={"/activities"}>Activities page</Link> or explore our <Link className="no-underline text-blue-600 hover:underline" href={"/activities"}>Trips offering</Link> for an immersive, tailor-made experience.</p>
             <h2 className="text-3xl font-bold mt-8">Culture & History</h2>
 
-            <h2 className="text-3xl font-bold mt-8">Djerba the land of civilisations</h2>
+            <h3 className="text-2xl font-bold mt-8">Djerba the land of civilisations</h3>
             <p className="text-lg leading-8 text-gray-800 mt-4">Berber, Phoenician, Roman, Byzantine, Arab-muslim, Ottoman, Jewish,...</p>
 
             <p className="text-lg leading-8 text-gray-800 mt-4">Embark on a captivating journey through the diverse and welcoming community of Djerba, where centuries-old traditions and a harmonious blend of religions create a tapestry of cultural richness.</p>
@@ -145,7 +145,7 @@ export default function GuidePage(){
 
             <p className="text-lg leading-8 text-gray-800 mt-4">-Taxis are available and inexpensive, with a trip from one side to the island taking approximately 20 minutes at around 4 - 6 EUR.</p>
 
-            <p className="text-lg leading-8 text-gray-800 mt-4">-Buses are also available between the main towns, although service is only 3-6 times per day. Download bus time</p>
+            <p className="text-lg leading-8 text-gray-800 mt-4">-Buses are also available between the main towns, although service is only 3-6 times per day. <a className="text-blue-600 hover:underline" target="_blank" href={"/bus.png"}>Download bus time</a></p>
 
             <p className="text-lg leading-8 text-gray-800 mt-4">-Bicycle and scooter rental is also available at affordable prices <Link className="no-underline text-blue-600 hover:underline" href={"/activities"}>Click here to see activities</Link></p>
 

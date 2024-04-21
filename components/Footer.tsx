@@ -3,24 +3,23 @@ import Image from "next/image"
 const navigation = {
   locations: [
     { name: 'Djerba, Tunisia', href: '#' },
-    { name: 'Gabes, Tunisia', href: '#' },
+    { name: 'Douz, Tunisia', href: '#' },
     { name: 'Tataouine, Tunisia', href: '#' },
     { name: 'Tozeur, Tunisia', href: '#' },
   ],
   support: [
-    { name: 'Online Guides', href: '#' },
-    { name: 'Contact Us', href: '#' },
+    { name: 'Online Chat', href: "/chat"},
+    { name: 'Online Guides', href: '/guide' },
+    { name: 'Email Us', href: 'mailto:contact@safertunisia.com' },
   ],
   company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: 'About', href: '/about' },
+    { name: 'Blog', href: '/blog' },
   ],
   team: [
     { name: 'Join our team', href: '#' },
     { name: 'Volontariat Program', href: '#' },
-    { name: 'WorkAway Program', href: '#' },
+    { name: 'WorkAway Program', href: 'https://www.workaway.info/en/host/736422219615' },
   ],
   social: [
     {

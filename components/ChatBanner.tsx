@@ -8,12 +8,12 @@ export default function ChatBanner() {
         <div className="text-white p-8 flex flex-col md:flex-row space-y-8 md:space-x-8 items-center shadow-xl rounded-xl">
             <div className="relative">
                 <Image
-                    src="/icons8-wifi.gif"
+                    src="/icons8-chat.gif"
                     alt="Djerba"
-                    width={256}
-                    height={256}
+                    width={80}
+                    height={80}
                     layout="cover"
-                    className="h-32 w-32 rounded-full bg-white p-4"
+                    className="h-18 w-18 bg-white"
                 />
             </div>
             <div className="flex flex-col flex-1">
@@ -22,7 +22,7 @@ export default function ChatBanner() {
             </div>
             <div className="">
                 <Button asChild size={"lg"}>
-                    <Link href="/contact">Chat now</Link>
+                    <Link href="/chat">Chat now</Link>
                 </Button>
             </div>
         </div>

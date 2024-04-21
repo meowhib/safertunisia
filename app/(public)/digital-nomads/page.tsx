@@ -37,7 +37,7 @@ export default function Page() {
     <div>
       <div
         style={{
-          backgroundImage: "url('/hero-image.png')",
+          backgroundImage: "url('/digitalnomad_banner.png')",
         }}
         className="h-96 bg-cover bg-center flex justify-center items-center relative"
       >
