@@ -19,10 +19,10 @@ export default function Home() {
       <Hero />
       <CTA />
       <WhatDoTo />
+      <ChatBanner />
       <Adventures />
       <CTA2 />
       <BlogSection />
-      <ChatBanner />
       <Sponsors />
     </>
   );
