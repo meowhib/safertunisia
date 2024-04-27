@@ -2,6 +2,7 @@
 import { z } from "zod";
 import prisma from "../prisma";
 import { productSchema } from "../validations";
+import { revalidatePath } from "next/cache";
 
 export default async function getActivity({ id }: { id: string }) {
   try {
@@ -95,6 +96,8 @@ export async function createActivity({
       return { status: 404, data: [] };
     }
 
+    revalidatePath("/activities", "page");
+    revalidatePath("/stays", "page");
     return { status: 200, data: activity };
   } catch (error) {
     console.log(error);

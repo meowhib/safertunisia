@@ -26,6 +26,7 @@ import { useFieldArray } from "react-hook-form";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { createActivity } from "@/lib/actions/activities-actions";
+import { redirect } from "next/navigation";
 
 export default function NewActivityForm() {
   const form = useForm<z.infer<typeof productSchema>>({
@@ -65,7 +66,11 @@ export default function NewActivityForm() {
     const createActivityAction = await createActivity({ values });
 
     if (createActivityAction.status === 200) {
-      alert("Activity created successfully");
+      if (values.type === "Stay") {
+        redirect("/stays");
+      } else {
+        redirect("/activities");
+      }
     } else {
       alert("An error occurred while creating the activity");
     }
