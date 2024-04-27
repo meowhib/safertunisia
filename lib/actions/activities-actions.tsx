@@ -23,13 +23,38 @@ export default async function getActivity({ id }: { id: string }) {
 
 export async function getAllActivities() {
   try {
-    const activities = await prisma.products.findMany();
+    // Get all products but stays
+    const activities = await prisma.products.findMany({
+      where: {
+        type: {
+          not: "Stay",
+        },
+      },
+    });
 
     if (!activities) {
       return { status: 404, data: null };
     }
 
     return { status: 200, data: activities };
+  } catch (error) {
+    return { status: 500, data: null };
+  }
+}
+
+export async function getAllStays() {
+  try {
+    const stays = await prisma.products.findMany({
+      where: {
+        type: "Stay",
+      },
+    });
+
+    if (!stays) {
+      return { status: 404, data: null };
+    }
+
+    return { status: 200, data: stays };
   } catch (error) {
     return { status: 500, data: null };
   }

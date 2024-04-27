@@ -29,11 +29,7 @@ export default function Product({
     <div className="bg-white rounded-xl shadow-xl flex-col overflow-hidden">
       <div className="">
         <Badge className="m-4 absolute" variant={"secondary"}>
-          {type === "trip"
-            ? "Trip"
-            : type === "activity"
-            ? "Activity"
-            : "Event"}
+          {type}
         </Badge>
         <img
           className="aspect-video object-cover"

@@ -111,6 +111,7 @@ export default function NewActivityForm() {
                   <SelectContent>
                     <SelectItem value="Activity">Activity</SelectItem>
                     <SelectItem value="Trip">Trip</SelectItem>
+                    <SelectItem value="Stay">Stay</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />

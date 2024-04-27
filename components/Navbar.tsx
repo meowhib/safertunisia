@@ -109,6 +109,12 @@ export default function Navbar() {
           >
             Activities & trips
           </Link>
+          <Link
+            href="/stays"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
+            Stays
+          </Link>
           {/* <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
               Activities & trips
