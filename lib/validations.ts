@@ -21,50 +21,58 @@ export const newBlogPostFormSchema = z.object({
 export type NewBlogPostForm = z.infer<typeof newBlogPostFormSchema>;
 
 export const productSchema = z.object({
-  name: z
-    .string()
-    .min(1, "Name is required")
-    .max(100, "Name must be at most 100 characters"),
-  type: z
-    .string()
-    .min(1, "Type is required")
-    .max(50, "Type must be at most 50 characters"),
-  description: z
-    .string()
-    .min(1, "Description is required")
-    .max(500, "Description must be at most 500 characters"),
-  duration: z
-    .string()
-    .min(1, "Duration is required")
-    .max(50, "Duration must be at most 50 characters"),
-  difficulty: z
-    .string()
-    .min(1, "Difficulty is required")
-    .max(50, "Difficulty must be at most 50 characters"),
+  name: z.string().min(1, "Name is required"),
+  type: z.string().min(1, "Type is required"),
+  description: z.string().min(1, "Description is required"),
+  duration: z.string().min(1, "Duration is required"),
+  difficulty: z.string().min(1, "Difficulty is required"),
+  maxAdults: z.preprocess(
+    (val) => parseInt(val as string, 10),
+    z.number().int().positive({
+      message: "Max adults must be a positive integer",
+    })
+  ),
+  minAdults: z.preprocess(
+    (val) => parseInt(val as string, 10),
+    z.number().int().positive({
+      message: "Min adults must be a positive integer",
+    })
+  ),
+  priceAdults: z.preprocess(
+    (val) => parseFloat(val as string),
+    z.number().nonnegative({
+      message: "Price for adults must be a non-negative number",
+    })
+  ),
+  maxChildren: z.preprocess(
+    (val) => parseInt(val as string, 10),
+    z.number().int().nonnegative({
+      message: "Max children must be a non-negative integer",
+    })
+  ),
+  minChildren: z.preprocess(
+    (val) => parseInt(val as string, 10),
+    z.number().int().nonnegative({
+      message: "Min children must be a non-negative integer",
+    })
+  ),
+  priceChildren: z.preprocess(
+    (val) => parseFloat(val as string),
+    z.number().nonnegative({
+      message: "Price for children must be a non-negative number",
+    })
+  ),
   minAge: z.preprocess(
-    (a) => parseInt(z.string().parse(a), 10),
-    z
-      .number()
-      .min(0, "Min age must be 0 or greater")
-      .max(120, "Max age cannot exceed 120")
+    (val) => parseInt(val as string, 10),
+    z.number().int().positive({
+      message: "Min age must be a positive integer",
+    })
   ),
-  imageUrl: z.string().url({ message: "Please enter a valid URL." }),
-  requirements: z
-    .string()
-    .min(1, "Requirements is required")
-    .max(500, "Requirements must be at most 500 characters"),
-  price: z.preprocess(
-    (a) => parseInt(z.string().parse(a), 10),
-    z
-      .number()
-      .min(0, "Price must be 0 or greater")
-      .max(1000000, "Price cannot exceed 1,000,000")
-  ),
-  date: z.string().min(1, "Date is required"), // Assuming this is a string representation of a date
-  location: z
-    .string()
-    .min(1, "Location is required")
-    .max(100, "Location must be at most 100 characters"),
+  imageUrl: z.string().url("Invalid image URL"),
+  requirement: z.string().min(1, "Requirement is required"),
+  date: z.string().min(1, "Date is required"),
+  location: z.string().min(1, "Location is required"),
+  destination: z.string().min(1, "Destination is required"),
   gallery: z
     .array(
       z.object({

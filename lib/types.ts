@@ -21,12 +21,18 @@ export type ProductProps = {
   description: string;
   duration: string;
   difficulty: string;
+  maxAdults: number;
+  minAdults: number;
+  priceAdults: number;
+  maxChildren: number;
+  minChildren: number;
+  priceChildren: number;
   minAge: number;
   imageUrl: string;
-  requirements: string;
-  price: number;
+  requirement: string;
   date: string;
   location: string;
+  destination: string;
   gallery: string[];
 };
 

@@ -42,12 +42,18 @@ model Products {
   description String
   duration String
   difficulty String
+  priceAdults Float
+  maxAdults Int
+  minAdults Int
+  priceChildren Float
+  maxChildren Int
+  minChildren Int
   minAge Int
   imageUrl String
-  requirements String
-  price Float
+  requirement String
   date String //Tfahemna n5aloha string mouch date
   location String
+  destination String
   gallery String[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

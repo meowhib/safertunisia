@@ -36,7 +36,7 @@ export default async function Page() {
           {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4 col-span-8"> */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {productsAction.status === 200 && productsAction.data ? (
-              productsAction.data.map((product: ProductProps) => (
+              productsAction.data.map((product) => (
                 <Product
                   key={product.id}
                   id={product.id}
@@ -47,10 +47,16 @@ export default async function Page() {
                   difficulty={product.difficulty}
                   minAge={product.minAge}
                   imageUrl={product.imageUrl}
-                  requirements={product.requirements}
-                  price={product.price}
+                  requirement={product.requirement}
+                  priceAdults={product.priceAdults}
+                  priceChildren={product.priceChildren}
+                  maxAdults={product.maxAdults}
+                  minAdults={product.minAdults}
+                  maxChildren={product.maxChildren}
+                  minChildren={product.minChildren}
                   date={product.date}
                   location={product.location}
+                  destination={product.destination}
                   gallery={product.gallery}
                 />
               ))

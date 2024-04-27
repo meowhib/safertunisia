@@ -50,10 +50,16 @@ export async function createActivity({
         difficulty: values.difficulty,
         minAge: values.minAge,
         imageUrl: values.imageUrl,
-        requirements: values.requirements,
-        price: values.price,
+        requirement: values.requirement,
+        priceAdults: values.priceAdults,
+        priceChildren: values.priceChildren,
+        maxAdults: values.maxAdults,
+        minAdults: values.minAdults,
+        maxChildren: values.maxChildren,
+        minChildren: values.minChildren,
         date: values.date,
         location: values.location,
+        destination: values.destination,
         gallery: values.gallery.map((item) => {
           return item.value;
         }),

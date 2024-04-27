@@ -36,12 +36,18 @@ export default function NewActivityForm() {
       description: "",
       duration: "",
       difficulty: "",
-      minAge: 0,
+      minAge: 3,
       imageUrl: "",
-      requirements: "",
-      price: 0,
+      requirement: "",
+      priceAdults: 0,
+      priceChildren: 0,
+      maxAdults: 0,
+      maxChildren: 0,
+      minAdults: 1,
+      minChildren: 0,
       date: "",
       location: "",
+      destination: "",
       gallery: [
         {
           value: "",
@@ -220,12 +226,12 @@ export default function NewActivityForm() {
         <div className="text-left space-y-3">
           <FormField
             control={form.control}
-            name="requirements"
+            name="requirement"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Requirements</FormLabel>
+                <FormLabel>Requirement</FormLabel>
                 <FormControl>
-                  <Input placeholder="Requirements" {...field} />
+                  <Input placeholder="Requirement" {...field} />
                 </FormControl>
 
                 <FormMessage />
@@ -237,12 +243,121 @@ export default function NewActivityForm() {
         <div className="text-left space-y-3">
           <FormField
             control={form.control}
-            name="price"
+            name="priceAdults"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Price</FormLabel>
+                <FormLabel>Price for adults</FormLabel>
                 <FormControl>
-                  <Input placeholder="Price" type="number" {...field} />
+                  <Input
+                    placeholder="Price for adults"
+                    type="number"
+                    {...field}
+                  />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        <div className="text-left space-y-3">
+          <FormField
+            control={form.control}
+            name="maxAdults"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Maximum number of adults</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Maximum number of adults"
+                    type="number"
+                    {...field}
+                  />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        <div className="text-left space-y-3">
+          <FormField
+            control={form.control}
+            name="minAdults"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Minimum number of adults</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Minimum number of adults"
+                    type="number"
+                    {...field}
+                  />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        <div className="text-left space-y-3">
+          <FormField
+            control={form.control}
+            name="priceChildren"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Price for children</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Price for children"
+                    type="number"
+                    {...field}
+                  />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        <div className="text-left space-y-3">
+          <FormField
+            control={form.control}
+            name="maxChildren"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Maximum number of children</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Maximum number of children"
+                    type="number"
+                    {...field}
+                  />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        <div className="text-left space-y-3">
+          <FormField
+            control={form.control}
+            name="minChildren"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Minimum number of children</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Minimum number of children"
+                    type="number"
+                    {...field}
+                  />
                 </FormControl>
 
                 <FormMessage />
@@ -286,6 +401,23 @@ export default function NewActivityForm() {
         </div>
 
         <div className="text-left space-y-3">
+          <FormField
+            control={form.control}
+            name="destination"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Destination</FormLabel>
+                <FormControl>
+                  <Input placeholder="Destination" {...field} />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        <div className="text-left space-y-3">
           {fields.map((field, index) => (
             <FormField
               control={form.control}
@@ -297,7 +429,8 @@ export default function NewActivityForm() {
                     URLs
                   </FormLabel>
                   <FormDescription className={cn(index !== 0 && "sr-only")}>
-                    Add links to your website, blog, or social media profiles.
+                    Add the URLs of the images you want to display on the
+                    gallery.
                   </FormDescription>
                   <FormControl>
                     <Input {...field} />
@@ -309,7 +442,7 @@ export default function NewActivityForm() {
           ))}
           <Button
             type="button"
-            variant="outline"
+            variant="secondary"
             size="sm"
             className="mt-2 w-full"
             onClick={() => append({ value: "" })}
