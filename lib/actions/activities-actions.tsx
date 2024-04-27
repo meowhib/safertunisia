@@ -97,6 +97,7 @@ export async function createActivity({
 
     return { status: 200, data: activity };
   } catch (error) {
+    console.log(error);
     return { status: 500, data: null };
   }
 }
