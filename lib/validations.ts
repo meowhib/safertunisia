@@ -24,6 +24,7 @@ export const productSchema = z.object({
   name: z.string().min(1, "Name is required"),
   type: z.string().min(1, "Type is required"),
   description: z.string().min(1, "Description is required"),
+  content: z.string().min(1, "Content is required"),
   duration: z.string().min(1, "Duration is required"),
   difficulty: z.string().min(1, "Difficulty is required"),
   maxAdults: z.preprocess(

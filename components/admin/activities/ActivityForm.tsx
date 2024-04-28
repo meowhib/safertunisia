@@ -21,6 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 import { KeyIcon, MapPinIcon, MapIcon, SearchIcon, Plus } from "lucide-react";
 import { useFieldArray } from "react-hook-form";
 import { cn } from "@/lib/utils";
@@ -35,6 +36,7 @@ export default function NewActivityForm() {
       name: "",
       type: "",
       description: "",
+      content: "",
       duration: "",
       difficulty: "",
       minAge: 3,
@@ -124,6 +126,7 @@ export default function NewActivityForm() {
             )}
           />
         </div>
+
         <div className="text-left space-y-3">
           <FormField
             control={form.control}
@@ -133,6 +136,27 @@ export default function NewActivityForm() {
                 <FormLabel>Description</FormLabel>
                 <FormControl>
                   <Input placeholder="Description" {...field} />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        <div className="text-left space-y-3">
+          <FormField
+            control={form.control}
+            name="content"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Content</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Content of the product"
+                    className="resize-y"
+                    {...field}
+                  />
                 </FormControl>
 
                 <FormMessage />

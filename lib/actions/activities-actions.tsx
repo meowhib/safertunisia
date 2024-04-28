@@ -72,6 +72,7 @@ export async function createActivity({
         name: values.name,
         type: values.type,
         description: values.description,
+        content: values.content,
         duration: values.duration,
         difficulty: values.difficulty,
         minAge: values.minAge,

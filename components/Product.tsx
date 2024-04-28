@@ -59,10 +59,12 @@ export default function Product({
             {difficulty}
           </p>
         </div>
-        <p className="text-md text-gray-600">{description}</p>
+        <p className="text-md text-gray-600 line-clamp-4">{description}</p>
         <div className="grid grid-flow-col justify-stretch">
           <Button className="h-full">
-            <Link href={`/product/${id}`}>Details</Link>
+            <Link href={type == "Stay" ? `/stays/${id}` : `/activities/${id}`}>
+              Details
+            </Link>
           </Button>
           <div className="flex flex-col text-right">
             <p className="text-md leading-8 text-gray-600">From</p>
@@ -71,7 +73,7 @@ export default function Product({
             </p>
           </div>
         </div>
-      </div>{" "}
+      </div>
     </div>
   );
 }
