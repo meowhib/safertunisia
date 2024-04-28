@@ -19,6 +19,7 @@ export type ProductProps = {
   name: string;
   type: string;
   description: string;
+  content: string;
   duration: string;
   difficulty: string;
   maxAdults: number;

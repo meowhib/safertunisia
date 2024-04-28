@@ -3,12 +3,14 @@ import { Button } from "./ui/button";
 import { ProductProps } from "@/lib/types";
 import { Badge } from "./ui/badge";
 import { SignalHigh, SignalLow, SignalMedium } from "lucide-react";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
 export default function Product({
   id,
   name,
   type,
   description,
+  content,
   duration,
   difficulty,
   minAge,
@@ -47,7 +49,7 @@ export default function Product({
         </div>
         <div className="space-y-3">
           <h2 className="text-2xl font-bold text-gray-900">{name}</h2>
-          <p className="text-lg leading-8 text-gray-600">{location}</p>
+          <MDXRemote source={content} />
           <p className="text-lg leading-8 text-gray-600 flex">
             {difficulty === "Easy" ? (
               <SignalLow size={24} />

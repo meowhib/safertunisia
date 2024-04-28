@@ -17,6 +17,27 @@ export const metadata: Metadata = {
 export default async function Page() {
   const productsAction = await getAllStays();
 
+  if (productsAction.status === 404) {
+    return (
+      <div>
+        <div
+          style={{
+            backgroundImage: "url('/hero-image.png')",
+          }}
+          className="h-96 bg-cover bg-center flex justify-center items-center relative"
+        >
+          <h1 className="text-4xl font-bold text-white absolute">Our stays</h1>
+        </div>
+        <div className="py-12 space-y-8 px-8 md:px-24">
+          <div className="text-center text-gray-600">
+            <p>No activities available</p>
+          </div>
+          <CTA3 />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div
@@ -46,6 +67,7 @@ export default async function Page() {
                   name={product.name}
                   type={product.type}
                   description={product.description}
+                  content={product.content}
                   duration={product.duration}
                   difficulty={product.difficulty}
                   minAge={product.minAge}

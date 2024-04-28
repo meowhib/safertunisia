@@ -43,6 +43,7 @@ export default async function Page() {
                   name={product.name}
                   type={product.type}
                   description={product.description}
+                  content={product.content}
                   duration={product.duration}
                   difficulty={product.difficulty}
                   minAge={product.minAge}

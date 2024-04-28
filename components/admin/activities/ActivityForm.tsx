@@ -27,9 +27,11 @@ import { useFieldArray } from "react-hook-form";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { createActivity } from "@/lib/actions/activities-actions";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 
 export default function NewActivityForm() {
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof productSchema>>({
     resolver: zodResolver(productSchema),
     defaultValues: {
@@ -69,9 +71,9 @@ export default function NewActivityForm() {
 
     if (createActivityAction.status === 200) {
       if (values.type === "Stay") {
-        redirect("/stays");
+        router.push("/stays");
       } else {
-        redirect("/activities");
+        router.push("/activities");
       }
     } else {
       alert("An error occurred while creating the activity");
