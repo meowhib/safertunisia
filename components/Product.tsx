@@ -4,6 +4,7 @@ import { ProductProps } from "@/lib/types";
 import { Badge } from "./ui/badge";
 import { SignalHigh, SignalLow, SignalMedium } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import Image from "next/image";
 
 export default function Product({
   id,
@@ -33,7 +34,7 @@ export default function Product({
         <Badge className="m-4 absolute" variant={"secondary"}>
           {type}
         </Badge>
-        <img
+        <Image
           className="aspect-video object-cover"
           src={imageUrl}
           alt="hero image"

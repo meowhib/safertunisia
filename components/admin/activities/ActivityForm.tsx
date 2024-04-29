@@ -69,6 +69,8 @@ export default function NewActivityForm() {
   async function onSubmit(values: z.infer<typeof productSchema>) {
     const createActivityAction = await createActivity({ values });
 
+    console.log(values.type)
+
     if (createActivityAction.status === 200) {
       if (values.type === "Stay") {
         router.push("/stays");
