@@ -50,7 +50,7 @@ export default function Product({
         </div>
         <div className="space-y-3">
           <h2 className="text-2xl font-bold text-gray-900">{name}</h2>
-          <MDXRemote source={content} />
+          {/* <MDXRemote source={content} /> */}
           <p className="text-lg leading-8 text-gray-600 flex">
             {difficulty === "Easy" ? (
               <SignalLow size={24} />
