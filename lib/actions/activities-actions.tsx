@@ -105,3 +105,44 @@ export async function createActivity({
     return { status: 500, data: null };
   }
 }
+
+export async function updateActivity({
+  id,
+  values,
+}: {
+  id: string;
+  values: z.infer<typeof productSchema>;
+}) {
+  try {
+    const updatedActivity = await prisma.products.update({
+      where: { id },
+      data: {
+        name: values.name,
+        type: values.type,
+        description: values.description,
+        content: values.content,
+        duration: values.duration,
+        difficulty: values.difficulty,
+        minAge: values.minAge,
+        imageUrl: values.imageUrl,
+        requirement: values.requirement,
+        priceAdults: values.priceAdults,
+        priceChildren: values.priceChildren,
+        maxAdults: values.maxAdults,
+        minAdults: values.minAdults,
+        maxChildren: values.maxChildren,
+        minChildren: values.minChildren,
+        date: values.date,
+        location: values.location,
+        destination: values.destination,
+        gallery: values.gallery.map((item) => {
+          return item.value;
+        }),
+      },
+    });
+    return { status: 200, data: updatedActivity };
+  } catch (error) {
+    console.error(error);
+    return { status: 500, error: "Failed to update activity" };
+  }
+}
