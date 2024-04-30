@@ -49,3 +49,14 @@ export type BlogProps = {
   };
   createdAt: Date;
 };
+
+export type ProductFormValues = {
+  id: string;
+  date: string | null;
+  priceAdults: number;
+  minAdults: number;
+  maxAdults: number;
+  priceChildren: number;
+  minChildren: number;
+  maxChildren: number;
+};
