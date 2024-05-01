@@ -29,11 +29,11 @@ export type ProductProps = {
   minChildren: number;
   priceChildren: number;
   minAge: number;
-  imageUrl: string;
-  requirement: string;
-  date: string;
-  location: string;
-  destination: string;
+  imageUrl: string | null;
+  requirement: string | null;
+  date: string | null;
+  location: string | null;
+  destination: string | null;
   gallery: string[];
 };
 

@@ -4,17 +4,21 @@ import ActivitiesCarousel from "./ActivitiesCarousel";
 import { getAllActivities } from "@/lib/actions/activities-actions";
 
 export default async function Adventures() {
-  const { status, data}: {status: Number, data: ProductProps[] | null} = await getAllActivities();
+  const { status, data }: { status: Number; data: ProductProps[] | null } =
+    await getAllActivities();
 
-  if (status != 200){
+  if (status != 200) {
     return (
       <div className="mx-auto max-w-7xl py-32 px-6 lg:px-8 space-y-12">
         <h2 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
           Find your adventure!
         </h2>
-        <p>No adventures found. Maybe check later because we&apos;re constantly adding more!</p>
+        <p>
+          No adventures found. Maybe check later because we&apos;re constantly
+          adding more!
+        </p>
       </div>
-    )
+    );
   }
 
   return (
@@ -22,13 +26,11 @@ export default async function Adventures() {
       <h2 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
         Find your adventure!
       </h2>
-      {
-        data ? (
-          <ActivitiesCarousel activities={data} />
-        ) : (
-          <ActivitiesCarousel activities={[]} />
-        )
-      }
+      {data ? (
+        <ActivitiesCarousel activities={data} />
+      ) : (
+        <ActivitiesCarousel activities={[]} />
+      )}
     </div>
   );
 }

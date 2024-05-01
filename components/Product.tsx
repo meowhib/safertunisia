@@ -36,7 +36,7 @@ export default function Product({
         </Badge>
         <Image
           className="aspect-video object-cover"
-          src={imageUrl}
+          src={imageUrl || ""}
           alt="hero image"
           width={600}
           height={338}

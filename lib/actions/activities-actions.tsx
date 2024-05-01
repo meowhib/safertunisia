@@ -31,6 +31,28 @@ export async function getAllActivities() {
           not: "Stay",
         },
       },
+      select: {
+        id: true,
+        name: true,
+        type: true,
+        description: true,
+        content: true,
+        duration: true,
+        difficulty: true,
+        maxAdults: true,
+        minAdults: true,
+        priceAdults: true,
+        maxChildren: true,
+        minChildren: true,
+        priceChildren: true,
+        minAge: true,
+        imageUrl: true,
+        requirement: true,
+        date: true,
+        location: true,
+        destination: true,
+        gallery: true,
+      },
     });
 
     if (!activities) {
