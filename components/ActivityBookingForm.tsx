@@ -42,7 +42,10 @@ export default function ActivityBookingForm({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-80">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="w-80 rounded-xl shadow-xl p-8 space-y-4"
+      >
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-4xl mb-12">
           Book now
         </h1>

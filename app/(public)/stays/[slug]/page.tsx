@@ -21,27 +21,27 @@ export default async function ActivityPage({
 
   const components = {
     h1: (props: any) => (
-      <h1 {...props} className="text-4xl font-bold mt-8">
+      <h1 {...props} className="text-3xl font-bold mt-8">
         {props.children}
       </h1>
     ),
     h2: (props: any) => (
-      <h2 {...props} className="text-3xl font-bold mt-8">
+      <h2 {...props} className="text-2xl font-bold mt-8">
         {props.children}
       </h2>
     ),
     h3: (props: any) => (
-      <h3 {...props} className="text-2xl font-bold mt-8">
+      <h3 {...props} className="text-xl font-bold mt-8">
         {props.children}
       </h3>
     ),
     h4: (props: any) => (
-      <h4 {...props} className="text-xl font-bold mt-8">
+      <h4 {...props} className="text-lg font-bold mt-8">
         {props.children}
       </h4>
     ),
     h5: (props: any) => (
-      <h5 {...props} className="text-lg font-bold mt-8">
+      <h5 {...props} className="text-md font-bold mt-8">
         {props.children}
       </h5>
     ),
@@ -51,7 +51,7 @@ export default async function ActivityPage({
       </h6>
     ),
     p: (props: any) => (
-      <p {...props} className="text-lg leading-8 text-gray-800 mt-4">
+      <p {...props} className="text-md leading-8 text-gray-800 mt-4">
         {props.children}
       </p>
     ),
@@ -71,7 +71,7 @@ export default async function ActivityPage({
       </ol>
     ),
     li: (props: any) => (
-      <li {...props} className="text-lg leading-8 list-inside text-gray-800">
+      <li {...props} className="text-md leading-8 list-inside text-gray-800">
         {props.children}
       </li>
     ),
@@ -107,7 +107,7 @@ export default async function ActivityPage({
         ))}
       </div>
       {/* Location and duration section */}
-      <div className="flex flex-row grid grid-cols-8 justify-between">
+      <div className="flex flex-row grid grid-cols-8 justify-between rounded shadow-xl p-6 rounded-xl">
         <div className="flex flex-col col-span-4">
           <h1 className="text-gray-900 text-3xl font-bold">
             {product.destination}

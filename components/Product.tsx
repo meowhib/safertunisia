@@ -3,7 +3,6 @@ import { Button } from "./ui/button";
 import { ProductProps } from "@/lib/types";
 import { Badge } from "./ui/badge";
 import { SignalHigh, SignalLow, SignalMedium } from "lucide-react";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 
 export default function Product({
@@ -64,7 +63,7 @@ export default function Product({
         </div>
         <p className="text-md text-gray-600 line-clamp-4">{description}</p>
         <div className="grid grid-flow-col justify-stretch">
-          <Button className="h-full">
+          <Button className="h-full" asChild>
             <Link href={type == "Stay" ? `/stays/${id}` : `/activities/${id}`}>
               Details
             </Link>
