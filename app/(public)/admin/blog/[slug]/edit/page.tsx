@@ -1,7 +1,11 @@
 import prisma from "@/lib/prisma";
 import EditBlogForm from "@/components/admin/blog/EditBlogForm";
 
-export default async function EditBlogPage({ params : { slug } }: { params: { slug: string } }) {
+export default async function EditBlogPage({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
   const authors = await prisma.author.findMany({
     select: {
       id: true,
@@ -16,12 +20,12 @@ export default async function EditBlogPage({ params : { slug } }: { params: { sl
       slug: slug,
     },
     include: {
-      author: true
-    }
+      author: true,
+    },
   });
 
   if (!blogPost) {
-    return <div>Blog post not found</div>
+    return <div>Blog post not found</div>;
   }
 
   return (
@@ -36,10 +40,10 @@ export default async function EditBlogPage({ params : { slug } }: { params: { sl
           imageURL: blogPost.imageUrl,
           author: {
             id: blogPost.author.id,
-            email: blogPost.author.email
-          }
+            email: blogPost.author.email,
+          },
         }}
-        />
+      />
     </div>
-  )
+  );
 }
