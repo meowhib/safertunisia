@@ -48,17 +48,17 @@ export default async function ActivityFormPage({
         duration={duration}
         difficulty={difficulty}
         minAge={minAge}
-        imageUrl={imageUrl}
-        requirement={requirement}
+        imageUrl={imageUrl || ""}
+        requirement={requirement || ""}
         priceAdults={priceAdults}
         priceChildren={priceChildren}
         maxAdults={maxAdults}
         maxChildren={maxChildren}
         minAdults={minAdults}
         minChildren={minChildren}
-        date={date}
-        location={location}
-        destination={destination}
+        date={date || ""}
+        location={location || ""}
+        destination={destination || ""}
         gallery={galleryUrls}
       />
     </div>
