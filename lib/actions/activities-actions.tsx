@@ -119,8 +119,8 @@ export async function createActivity({
       return { status: 404, data: [] };
     }
 
-    revalidatePath("/activities", "page");
-    revalidatePath("/stays", "page");
+    revalidatePath("/activities");
+    revalidatePath("/stays");
     return { status: 200, data: activity };
   } catch (error) {
     console.log(error);
