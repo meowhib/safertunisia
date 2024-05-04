@@ -121,6 +121,7 @@ export async function createActivity({
 
     revalidatePath("/activities");
     revalidatePath("/stays");
+    revalidatePath("/");
     return { status: 200, data: activity };
   } catch (error) {
     console.log(error);
