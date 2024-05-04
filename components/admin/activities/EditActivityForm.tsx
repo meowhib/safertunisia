@@ -29,12 +29,14 @@ import {
   SearchIcon,
   Plus,
   Pencil,
+  Trash2,
 } from "lucide-react";
 import { useFieldArray } from "react-hook-form";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import {
   createActivity,
+  deleteActivity,
   updateActivity,
 } from "@/lib/actions/activities-actions";
 import { redirect, useRouter } from "next/navigation";
@@ -537,6 +539,20 @@ export default function UpdateActivityForm({
           <Pencil className="mr-2 h-4 w-4" /> Edit
         </Button>
       </form>
+      <Button
+        className="w-full h-full bg-red-500"
+        onClick={async () => {
+          const deleteActivityAction = await deleteActivity({ id });
+
+          if (deleteActivityAction.status === 200) {
+            router.push("/activities");
+          } else {
+            alert("An error occurred while deleting the activity");
+          }
+        }}
+      >
+        <Trash2 className="mr-2 h-4 w-4" /> Delete
+      </Button>
     </Form>
   );
 }

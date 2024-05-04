@@ -207,3 +207,15 @@ export async function updateActivity({
     return { status: 500, error: "Failed to update activity" };
   }
 }
+
+export async function deleteActivity({ id }: { id: string }) {
+  try {
+    const deletedActivity = await prisma.products.delete({
+      where: { id },
+    });
+    return { status: 200, data: deletedActivity };
+  } catch (error) {
+    console.error(error);
+    return { status: 500, error: "Failed to delete activity" };
+  }
+}
