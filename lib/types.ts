@@ -52,6 +52,7 @@ export type BlogProps = {
 
 export type ProductFormValues = {
   id: string;
+  name: string;
   date: string | null;
   priceAdults: number;
   minAdults: number;

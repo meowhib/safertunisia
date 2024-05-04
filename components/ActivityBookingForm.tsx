@@ -17,10 +17,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { ProductFormValues } from "@/lib/types";
 import { Minus, Plus } from "lucide-react";
+import { format } from "path";
+import { useState } from "react";
 
 const FormSchema = z.object({
   numberOfAdults: z.number(),
   numberOfChildren: z.number(),
+  price: z.number(),
 });
 
 export default function ActivityBookingForm({
@@ -28,16 +31,32 @@ export default function ActivityBookingForm({
 }: {
   product: ProductFormValues;
 }) {
+  const [price, setPrice] = useState<number>(
+    product.priceAdults * product.minAdults +
+      product.priceChildren * product.minChildren
+  );
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
       numberOfAdults: product.minAdults,
       numberOfChildren: product.minChildren,
+      price:
+        product.priceAdults * product.minAdults +
+        product.priceChildren * product.minChildren,
     },
   });
 
+  const constructWhatsappUrl = (formData: z.infer<typeof FormSchema>) => {
+    let message = `I would like to book ${formData.numberOfAdults} adults and ${formData.numberOfChildren} children for the ${product.name} on ${product.date}. The total price is $${formData.price}.`;
+
+    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    return whatsappUrl;
+  };
+
   function onSubmit(data: z.infer<typeof FormSchema>) {
     console.log(data);
+    console.log(constructWhatsappUrl(data));
   }
 
   return (
@@ -54,9 +73,7 @@ export default function ActivityBookingForm({
             <p className="text-gray-600">Price</p>
             <h2 className="text-2xl font-bold">From</h2>
           </div>
-          <div className="text-4xl font-bold">
-            ${product.priceAdults * product.minAdults}
-          </div>
+          <div className="text-4xl font-bold">${price}</div>
         </div>
         <div className="flex flex-col mb-2">
           <h2 className="text-2xl font-bold">Date</h2>
@@ -80,6 +97,17 @@ export default function ActivityBookingForm({
                       form.setValue(
                         "numberOfAdults",
                         form.getValues("numberOfAdults") - 1
+                      );
+                      form.setValue(
+                        "price",
+                        product.priceAdults * form.getValues("numberOfAdults") +
+                          product.priceChildren *
+                            form.getValues("numberOfChildren")
+                      );
+                      setPrice(
+                        product.priceAdults * form.getValues("numberOfAdults") +
+                          product.priceChildren *
+                            form.getValues("numberOfChildren")
                       );
                     }}
                     disabled={
@@ -111,6 +139,17 @@ export default function ActivityBookingForm({
                         "numberOfAdults",
                         form.getValues("numberOfAdults") + 1
                       );
+                      form.setValue(
+                        "price",
+                        product.priceAdults * form.getValues("numberOfAdults") +
+                          product.priceChildren *
+                            form.getValues("numberOfChildren")
+                      );
+                      setPrice(
+                        product.priceAdults * form.getValues("numberOfAdults") +
+                          product.priceChildren *
+                            form.getValues("numberOfChildren")
+                      );
                     }}
                     disabled={
                       form.getValues("numberOfAdults") >= product.maxAdults
@@ -141,6 +180,17 @@ export default function ActivityBookingForm({
                         "numberOfChildren",
                         form.getValues("numberOfChildren") - 1
                       );
+                      form.setValue(
+                        "price",
+                        product.priceAdults * form.getValues("numberOfAdults") +
+                          product.priceChildren *
+                            form.getValues("numberOfChildren")
+                      );
+                      setPrice(
+                        product.priceAdults * form.getValues("numberOfAdults") +
+                          product.priceChildren *
+                            form.getValues("numberOfChildren")
+                      );
                     }}
                     disabled={
                       form.getValues("numberOfChildren") <= product.minChildren
@@ -170,6 +220,17 @@ export default function ActivityBookingForm({
                       form.setValue(
                         "numberOfChildren",
                         form.getValues("numberOfChildren") + 1
+                      );
+                      form.setValue(
+                        "price",
+                        product.priceAdults * form.getValues("numberOfAdults") +
+                          product.priceChildren *
+                            form.getValues("numberOfChildren")
+                      );
+                      setPrice(
+                        product.priceAdults * form.getValues("numberOfAdults") +
+                          product.priceChildren *
+                            form.getValues("numberOfChildren")
                       );
                     }}
                     disabled={
