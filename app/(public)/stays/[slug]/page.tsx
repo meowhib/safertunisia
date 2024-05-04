@@ -1,6 +1,6 @@
 import ActivityBookingForm from "@/components/ActivityBookingForm";
 import prisma from "@/lib/prisma";
-import { Clock, Pin } from "lucide-react";
+import { Baby, Clock, Pin, Flame } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import { type Metadata } from "next";
@@ -113,7 +113,7 @@ export default async function ActivityPage({
         ))}
       </div>
       {/* Location and duration section */}
-      <div className="flex flex-col space-y-8 md:space-y-0 md:flex-row ">
+      <div className="flex flex-col space-y-8 md:space-y-0 md:flex-row shadow-lg rounded-lg p-6">
         <div className="flex flex-col">
           <h1 className="text-gray-900 text-3xl font-bold">
             {product.destination}
