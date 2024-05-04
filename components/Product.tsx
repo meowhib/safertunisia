@@ -71,7 +71,7 @@ export default function Product({
           <div className="flex flex-col text-right">
             <p className="text-md leading-8 text-gray-600">From</p>
             <p className="text-2xl font-bold leading-8 text-gray-900">
-              {priceAdults * minAdults}$
+              {priceAdults * minAdults}€
             </p>
           </div>
         </div>

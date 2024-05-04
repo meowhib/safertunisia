@@ -65,6 +65,44 @@ export async function getAllActivities() {
   }
 }
 
+export async function getActivitiesAndStays() {
+  try {
+    // Get all products but stays
+    const activities = await prisma.products.findMany({
+      select: {
+        id: true,
+        name: true,
+        type: true,
+        description: true,
+        content: true,
+        duration: true,
+        difficulty: true,
+        maxAdults: true,
+        minAdults: true,
+        priceAdults: true,
+        maxChildren: true,
+        minChildren: true,
+        priceChildren: true,
+        minAge: true,
+        imageUrl: true,
+        requirement: true,
+        date: true,
+        location: true,
+        destination: true,
+        gallery: true,
+      },
+    });
+
+    if (!activities) {
+      return { status: 404, data: null };
+    }
+
+    return { status: 200, data: activities };
+  } catch (error) {
+    return { status: 500, data: null };
+  }
+}
+
 export async function getAllStays() {
   try {
     const stays = await prisma.products.findMany({

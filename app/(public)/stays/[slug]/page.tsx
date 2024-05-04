@@ -3,6 +3,12 @@ import prisma from "@/lib/prisma";
 import { Clock, Pin } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Digital nomads | Safer Tunisia",
+  description: "Live your nomad life in Tunisia",
+};
 
 export default async function ActivityPage({
   params: { slug },

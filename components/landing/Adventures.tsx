@@ -1,11 +1,11 @@
 import Product from "../Product";
 import { ProductProps } from "@/lib/types";
 import ActivitiesCarousel from "./ActivitiesCarousel";
-import { getAllActivities } from "@/lib/actions/activities-actions";
+import { getActivitiesAndStays } from "@/lib/actions/activities-actions";
 
 export default async function Adventures() {
   const { status, data }: { status: Number; data: ProductProps[] | null } =
-    await getAllActivities();
+    await getActivitiesAndStays();
 
   if (status != 200) {
     return (

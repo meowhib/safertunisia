@@ -48,7 +48,7 @@ export default function ActivityBookingForm({
   });
 
   const constructWhatsappUrl = (formData: z.infer<typeof FormSchema>) => {
-    let message = `I would like to book ${formData.numberOfAdults} adults and ${formData.numberOfChildren} children for the ${product.name} on ${product.date}. The total price is $${formData.price}.`;
+    let message = `I would like to book ${formData.numberOfAdults} adults and ${formData.numberOfChildren} children for the ${product.name} on ${product.date}. The total price is ${formData.price}€.`;
 
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
     return whatsappUrl;
@@ -72,7 +72,7 @@ export default function ActivityBookingForm({
             <p className="text-gray-600">Price</p>
             <h2 className="text-2xl font-bold">From</h2>
           </div>
-          <div className="text-4xl font-bold">${price}</div>
+          <div className="text-4xl font-bold">{price}€</div>
         </div>
         <div className="flex flex-col mb-2">
           <h2 className="text-2xl font-bold">Date</h2>
