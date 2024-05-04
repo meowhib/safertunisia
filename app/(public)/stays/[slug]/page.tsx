@@ -94,21 +94,21 @@ export default async function ActivityPage({
   return (
     <div className="w-full grid mx-auto max-w-7xl px-6 lg:px-8">
       {/* Image gallery section */}
-      <div className="grid grid-cols-4 gap-x-4 my-12">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 my-12">
         {product.gallery.map((image) => (
           <Image
             key={image}
             src={image}
             alt="Gallery image"
-            className="w-full rounded-2xl bg-gray-100 object-cover aspect-[16/9] sm:aspect-[2/1] lg:aspect-[3/2]"
+            className="w-full rounded-2xl object-cover aspect-[16/9] sm:aspect-[2/1] lg:aspect-[3/2]"
             width={720}
             height={405}
           />
         ))}
       </div>
       {/* Location and duration section */}
-      <div className="flex flex-row grid grid-cols-8 justify-between rounded shadow-xl p-6 rounded-xl">
-        <div className="flex flex-col col-span-4">
+      <div className="flex flex-col space-y-8 md:space-y-0 md:flex-row ">
+        <div className="flex flex-col">
           <h1 className="text-gray-900 text-3xl font-bold">
             {product.destination}
           </h1>
@@ -117,7 +117,7 @@ export default async function ActivityPage({
             {product.location}
           </p>
         </div>
-        <div className="flex flex-row space-x-8 col-span-4 ml-auto">
+        <div className="flex flex-col sm:flex-row sm:space-x-8 md:ml-auto">
           <div className="flex flex-row items-center space-x-6">
             <div className="aspect-square h-12 w-12 flex items-center justify-center bg-primary rounded-full">
               <Clock className="text-white" />
@@ -154,13 +154,13 @@ export default async function ActivityPage({
         </div>
       </div>
       {/* Description and booking form section */}
-      <div className="flex flex-row space-x-8 my-8">
+      <div className="flex flex-col md:flex-row space-x-8 my-8">
         {/* Description in markdown*/}
         <div className="flex flex-col flex-1">
           <MDXRemote source={product.content} components={components} />
         </div>
         {/* Form side */}
-        <div className="py-12 h-fit sticky top-0">
+        <div className="sticky">
           <ActivityBookingForm product={product} />
         </div>
       </div>

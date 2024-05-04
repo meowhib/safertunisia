@@ -55,8 +55,7 @@ export default function ActivityBookingForm({
   };
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log(data);
-    console.log(constructWhatsappUrl(data));
+    window.open(constructWhatsappUrl(data), "_blank");
   }
 
   return (
