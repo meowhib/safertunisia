@@ -4,6 +4,13 @@ import { Baby, Clock, Pin, Flame } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import { type Metadata } from "next";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export const metadata: Metadata = {
   title: "Digital nomads | Safer Tunisia",
@@ -100,7 +107,7 @@ export default async function ActivityPage({
   return (
     <div className="w-full grid mx-auto max-w-7xl px-6 lg:px-8">
       {/* Image gallery section */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 my-12">
+      {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 my-12">
         {product.gallery.map((image) => (
           <Image
             key={image}
@@ -111,7 +118,24 @@ export default async function ActivityPage({
             height={405}
           />
         ))}
-      </div>
+      </div> */}
+      <Carousel>
+        <CarouselContent className="*:basis-1/1 *:md:basis-1/3 ">
+          {product.gallery.map((image) => (
+            <CarouselItem key={image}>
+              <Image
+                src={image}
+                alt="Gallery image"
+                className="w-full rounded-2xl object-cover aspect-[16/9] sm:aspect-[2/1] lg:aspect-[3/2]"
+                width={720}
+                height={405}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
       {/* Location and duration section */}
       <div className="flex flex-col space-y-8 md:space-y-0 md:flex-row shadow-lg rounded-lg p-6">
         <div className="flex flex-col">
