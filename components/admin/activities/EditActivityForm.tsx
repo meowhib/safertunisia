@@ -30,6 +30,7 @@ import {
   Plus,
   Pencil,
   Trash2,
+  X,
 } from "lucide-react";
 import { useFieldArray } from "react-hook-form";
 import { cn } from "@/lib/utils";
@@ -40,6 +41,17 @@ import {
   updateActivity,
 } from "@/lib/actions/activities-actions";
 import { redirect, useRouter } from "next/navigation";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 export default function UpdateActivityForm({
   id,
@@ -111,7 +123,7 @@ export default function UpdateActivityForm({
     },
   });
 
-  const { fields, append } = useFieldArray({
+  const { fields, append, remove } = useFieldArray({
     name: "gallery",
     control: form.control,
   });
@@ -517,7 +529,20 @@ export default function UpdateActivityForm({
                     gallery.
                   </FormDescription>
                   <FormControl>
-                    <Input {...field} />
+                    <div className="flex flex-row space-x-2 items-center">
+                      <Input {...field} />
+                      <Button
+                        type="button"
+                        variant="destructive"
+                        size="icon"
+                        className="rounded-lg"
+                        onClick={() => {
+                          remove(index);
+                        }}
+                      >
+                        <X className="h-4 w-4" />
+                      </Button>
+                    </div>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -538,21 +563,65 @@ export default function UpdateActivityForm({
         <Button type="submit" className="w-full h-full">
           <Pencil className="mr-2 h-4 w-4" /> Edit
         </Button>
-      </form>
-      <Button
-        className="w-full h-full bg-red-500"
-        onClick={async () => {
-          const deleteActivityAction = await deleteActivity({ id });
 
-          if (deleteActivityAction.status === 200) {
-            router.push("/activities");
-          } else {
-            alert("An error occurred while deleting the activity");
-          }
-        }}
-      >
-        <Trash2 className="mr-2 h-4 w-4" /> Delete
-      </Button>
+        <div className="pt-6 space-y-6">
+          {/* <p className="text-center text-gray-700">
+            Or would you like to delete this activity?
+          </p>
+          <Button
+            className="w-full h-full bg-red-500"
+            onClick={async () => {
+              const deleteActivityAction = await deleteActivity({ id });
+
+              if (deleteActivityAction.status === 200) {
+                router.push("/activities");
+              } else {
+                alert("An error occurred while deleting the activity");
+              }
+            }}
+          >
+            <Trash2 className="mr-2 h-4 w-4" /> Delete
+          </Button> */}
+          <AlertDialog>
+            <Button
+              className="w-full h-full bg-red-500 hover:bg-red-700"
+              asChild
+            >
+              <AlertDialogTrigger className="w-full">
+                <Trash2 className="mr-2 h-4 w-4" /> Delete
+              </AlertDialogTrigger>
+            </Button>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  This action cannot be undone. This will permanently delete the
+                  activity from the database.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <Button
+                  onClick={async () => {
+                    const deleteActivityAction = await deleteActivity({ id });
+
+                    if (deleteActivityAction.status === 200) {
+                      router.push("/activities");
+                    } else {
+                      alert("An error occurred while deleting the activity");
+                    }
+                  }}
+                  asChild
+                >
+                  <AlertDialogAction className="bg-red-500 hover:bg-red-700">
+                    Delete
+                  </AlertDialogAction>
+                </Button>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+        </div>
+      </form>
     </Form>
   );
 }
