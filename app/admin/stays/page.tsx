@@ -42,8 +42,8 @@ export default async function ActivitiesAdminPage() {
         x-chunk="dashboard-02-chunk-1"
       >
         {stays.map((stay) => (
-          <div className="flex flex-col space-y-4">
-            <Product key={stay.id} {...stay} />
+          <div key={stay.id} className="flex flex-col space-y-4">
+            <Product {...stay} />
             <Button variant={"secondary"} asChild>
               <Link href={`/admin/activities/edit/${stay.id}`}>
                 <Pen className="h-4 w-4 mr-2" />

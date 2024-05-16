@@ -11,11 +11,24 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { getAllActivities } from "@/lib/actions/activities-actions";
 
 export const metadata: Metadata = {
   title: "Digital nomads | Safer Tunisia",
   description: "Live your nomad life in Tunisia",
 };
+
+export async function generateStaticParams() {
+  const activities = await getAllActivities();
+
+  if (!activities || !activities.data || !activities.data.length) {
+    return [];
+  }
+
+  return activities.data.map((stay: any) => ({
+    slug: stay.slug,
+  }));
+}
 
 export default async function ActivityPage({
   params: { slug },
