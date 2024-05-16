@@ -121,7 +121,7 @@ export default async function ActivityPage({
       </div> */}
       <Carousel>
         <CarouselContent className="*:basis-1/1 *:md:basis-1/3 ">
-          {product.gallery.map((image) => (
+          {product.gallery.map((image: string) => (
             <CarouselItem key={image}>
               <Image
                 src={image}

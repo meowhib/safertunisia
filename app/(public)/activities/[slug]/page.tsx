@@ -138,7 +138,7 @@ export default async function ActivityPage({
       </Carousel>
 
       {/* Location and duration section */}
-      <div className="flex flex-col space-y-8 md:space-y-0 md:flex-row">
+      <div className="flex flex-col space-y-8 md:space-y-0 md:flex-row shadow-lg rounded-lg p-6">
         <div className="flex flex-col">
           <h1 className="text-gray-900 text-3xl font-bold">
             {product.destination}
