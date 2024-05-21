@@ -52,6 +52,8 @@ export async function getAllActivities() {
         location: true,
         destination: true,
         gallery: true,
+        createdAt: true,
+        updatedAt: true,
       },
     });
 
