@@ -18,7 +18,7 @@ export default async function Page() {
     <div>
       <div
         style={{
-          backgroundImage: "url('/hero-image.png')",
+          backgroundImage: "url('/stay.webp')",
         }}
         className="h-96 bg-cover bg-center flex justify-center items-center relative"
       >

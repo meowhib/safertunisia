@@ -37,7 +37,7 @@ export default function Page() {
     <div>
       <div
         style={{
-          backgroundImage: "url('/digitalnomad_banner.png')",
+          backgroundImage: "url('/nomadpage.webp')",
         }}
         className="h-96 bg-cover bg-center flex justify-center items-center relative"
       >
