@@ -44,7 +44,7 @@ export default async function Page() {
         style={{
           backgroundImage: "url('/stay.webp')",
         }}
-        className="h-96 bg-cover bg-center flex justify-center items-center relative"
+        className="h-96 bg-center flex justify-center items-center relative bg-cover"
       >
         <h1 className="text-4xl font-bold text-white absolute">Our stays</h1>
       </div>
