@@ -29,11 +29,11 @@ export type ProductProps = {
   minChildren: number;
   priceChildren: number;
   minAge: number;
-  imageUrl: string;
-  requirement: string;
-  date: string;
-  location: string;
-  destination: string;
+  imageUrl: string | null;
+  requirement: string | null;
+  date: string | null;
+  location: string | null;
+  destination: string | null;
   gallery: string[];
 };
 
@@ -48,4 +48,16 @@ export type BlogProps = {
     imageUrl: string | null;
   };
   createdAt: Date;
+};
+
+export type ProductFormValues = {
+  id: string;
+  name: string;
+  date: string | null;
+  priceAdults: number;
+  minAdults: number;
+  maxAdults: number;
+  priceChildren: number;
+  minChildren: number;
+  maxChildren: number;
 };

@@ -18,7 +18,7 @@ export default async function Page() {
     <div>
       <div
         style={{
-          backgroundImage: "url('/hero-image.png')",
+          backgroundImage: "url('/quads.webp')",
         }}
         className="h-96 bg-cover bg-center flex justify-center items-center relative"
       >
@@ -47,17 +47,17 @@ export default async function Page() {
                   duration={product.duration}
                   difficulty={product.difficulty}
                   minAge={product.minAge}
-                  imageUrl={product.imageUrl}
-                  requirement={product.requirement}
+                  imageUrl={product.imageUrl || ""}
+                  requirement={product.requirement || ""}
                   priceAdults={product.priceAdults}
                   priceChildren={product.priceChildren}
                   maxAdults={product.maxAdults}
                   minAdults={product.minAdults}
                   maxChildren={product.maxChildren}
                   minChildren={product.minChildren}
-                  date={product.date}
-                  location={product.location}
-                  destination={product.destination}
+                  date={product.date || ""}
+                  location={product.location || ""}
+                  destination={product.destination || ""}
                   gallery={product.gallery}
                 />
               ))

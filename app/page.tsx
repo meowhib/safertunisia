@@ -7,6 +7,8 @@ import BlogSection from "@/components/landing/BlogSection";
 import Sponsors from "@/components/landing/Sponsors";
 import { type Metadata } from "next";
 import ChatBanner from "@/components/ChatBanner";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Safer Tunisia",
@@ -16,6 +18,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <Navbar />
       <Hero />
       <CTA />
       <WhatDoTo />
@@ -24,6 +27,7 @@ export default function Home() {
       <CTA2 />
       <BlogSection />
       <Sponsors />
+      <Footer />
     </>
   );
 }

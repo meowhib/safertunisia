@@ -2,12 +2,24 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import prisma from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { ResolvingMetadata, type Metadata } from "next";
-import { getBlogPostBySlug } from "@/lib/actions/blog-actions";
+import { getAllBlogPosts, getBlogPostBySlug } from "@/lib/actions/blog-actions";
 
 type Props = {
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 };
+
+export async function generateStaticParams() {
+  const blogs = await getAllBlogPosts();
+
+  if (!blogs || !blogs.data || !blogs.data.length) {
+    return [];
+  }
+
+  return blogs.data.map((stay: any) => ({
+    slug: stay.slug,
+  }));
+}
 
 export async function generateMetadata(
   { params, searchParams }: Props,

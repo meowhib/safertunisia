@@ -22,7 +22,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { KeyIcon, MapPinIcon, MapIcon, SearchIcon, Plus } from "lucide-react";
+import {
+  KeyIcon,
+  MapPinIcon,
+  MapIcon,
+  SearchIcon,
+  Plus,
+  X,
+} from "lucide-react";
 import { useFieldArray } from "react-hook-form";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
@@ -61,13 +68,15 @@ export default function NewActivityForm() {
     },
   });
 
-  const { fields, append } = useFieldArray({
+  const { fields, append, remove } = useFieldArray({
     name: "gallery",
     control: form.control,
   });
 
   async function onSubmit(values: z.infer<typeof productSchema>) {
     const createActivityAction = await createActivity({ values });
+
+    console.log(values.type);
 
     if (createActivityAction.status === 200) {
       if (values.type === "Stay") {
@@ -466,7 +475,20 @@ export default function NewActivityForm() {
                     gallery.
                   </FormDescription>
                   <FormControl>
-                    <Input {...field} />
+                    <div className="flex flex-row space-x-2 items-center">
+                      <Input {...field} />
+                      <Button
+                        type="button"
+                        variant="destructive"
+                        size="icon"
+                        className="rounded-lg"
+                        onClick={() => {
+                          remove(index);
+                        }}
+                      >
+                        <X className="h-4 w-4" />
+                      </Button>
+                    </div>
                   </FormControl>
                   <FormMessage />
                 </FormItem>

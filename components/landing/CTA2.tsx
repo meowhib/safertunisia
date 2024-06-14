@@ -8,7 +8,7 @@ export default function CTA2() {
   return (
     <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
       <Image
-        src="/hero-image.png"
+        src="/cta-image.png"
         alt="hero image safe tunisia"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
         layout="fill"
@@ -26,7 +26,8 @@ export default function CTA2() {
           In Djerba as Digial Nomad?
         </h2>
         <p className="mt-6 text-lg leading-8 text-gray-100 drop-shadow-md">
-        Accommodation, coworking spaces, transportation, activities, and more...
+          Accommodation, coworking spaces, transportation, activities, and
+          more...
         </p>
         <Link href="mailto:contact@safertunisia.com">
           <Button className="mt-8">Contact us</Button>

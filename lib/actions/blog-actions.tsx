@@ -10,13 +10,30 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/authOptions";
 
 export async function getAllBlogPosts() {
-  const blogPosts = await prisma.blog.findMany({
-    orderBy: {
-      createdAt: "desc",
-    },
-  });
+  try {
+    const blogPosts = await prisma.blog.findMany({
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
 
-  return blogPosts;
+    if (!blogPosts) {
+      return {
+        status: 404,
+        data: [],
+      };
+    }
+
+    return {
+      status: 200,
+      data: blogPosts,
+    };
+  } catch (error) {
+    return {
+      status: 500,
+      data: [],
+    };
+  }
 }
 
 export async function getLatestBlogPosts() {

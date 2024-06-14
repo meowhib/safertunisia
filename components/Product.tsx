@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { ProductProps } from "@/lib/types";
 import { Badge } from "./ui/badge";
 import { SignalHigh, SignalLow, SignalMedium } from "lucide-react";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import Image from "next/image";
 
 export default function Product({
   id,
@@ -33,9 +33,9 @@ export default function Product({
         <Badge className="m-4 absolute" variant={"secondary"}>
           {type}
         </Badge>
-        <img
+        <Image
           className="aspect-video object-cover"
-          src={imageUrl}
+          src={imageUrl || ""}
           alt="hero image"
           width={600}
           height={338}
@@ -62,7 +62,7 @@ export default function Product({
         </div>
         <p className="text-md text-gray-600 line-clamp-4">{description}</p>
         <div className="grid grid-flow-col justify-stretch">
-          <Button className="h-full">
+          <Button className="h-full" asChild>
             <Link href={type == "Stay" ? `/stays/${id}` : `/activities/${id}`}>
               Details
             </Link>
@@ -70,7 +70,7 @@ export default function Product({
           <div className="flex flex-col text-right">
             <p className="text-md leading-8 text-gray-600">From</p>
             <p className="text-2xl font-bold leading-8 text-gray-900">
-              {priceAdults * minAdults}$
+              {priceAdults * minAdults}€
             </p>
           </div>
         </div>

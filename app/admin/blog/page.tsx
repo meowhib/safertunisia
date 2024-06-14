@@ -1,0 +1,227 @@
+import { Button } from "@/components/ui/button";
+import prisma from "@/lib/prisma";
+import Link from "next/link";
+
+// export default async function BlogPage() {
+//   async function getAllBlogs() {
+//     "use server";
+
+//     const blogs = await prisma.blog.findMany({
+//       include: {
+//         author: {
+//           select: { name: true, imageUrl: true, role: true },
+//         },
+//       },
+//     });
+
+//     return blogs;
+//   }
+
+//   const blogs = await getAllBlogs();
+
+//   return (
+//     <div className="bg-white py-12 sm:py-16">
+//       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+//         <div className="mx-auto max-w-2xl text-center space-y-8">
+//           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+//             Blog
+//           </h2>
+//           <Button variant={"default"} asChild>
+//             <Link href="/admin/blog/new">Create Blog</Link>
+//           </Button>
+//         </div>
+//         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+//           {blogs.map((post) => (
+//             <article
+//               key={post.slug}
+//               className="flex flex-col items-start justify-between"
+//             >
+//               <div className="relative w-full">
+//                 <img
+//                   src={post.imageUrl}
+//                   alt=""
+//                   className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+//                 />
+//                 <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+//               </div>
+//               <div className="max-w-xl">
+//                 {/*<div className="mt-8 flex items-center gap-x-4 text-xs">
+//                   <time dateTime={post.datetime} className="text-gray-500">
+//                     {post.date}
+//                   </time>
+//                   <a
+//                     href={post.category.href}
+//                     className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+//                   >
+//                     {post.category.title}
+//                   </a>
+//                 </div>*/}
+//                 <div className="group relative">
+//                   <h3 className="mt-6 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+//                     <Link href={"/blog/" + post.slug}>
+//                       <span className="absolute inset-0" />
+//                       {post.title}
+//                     </Link>
+//                   </h3>
+//                   <p className="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">
+//                     {post.description}
+//                   </p>
+//                 </div>
+//                 <div className="relative mt-8 flex items-center gap-x-4">
+//                   <img
+//                     src={post.author.imageUrl || ""}
+//                     alt=""
+//                     className="h-10 w-10 rounded-full bg-gray-100"
+//                   />
+//                   <div className="text-sm leading-6">
+//                     <p className="font-semibold text-gray-900">
+//                       <span className="absolute inset-0" />
+//                       {post.author.name}
+//                     </p>
+//                     <p className="text-gray-600">{post.author.role}</p>
+//                   </div>
+//                 </div>
+//               </div>
+//               <div className="mt-8 flex flex-col space-y-4 w-full">
+//                 <Button variant={"secondary"} asChild>
+//                   <Link href={"/admin/blog/" + post.slug + "/edit"}>Edit</Link>
+//                 </Button>
+//                 <Button variant={"secondary"} asChild>
+//                   <Link href={"/admin/blog/" + post.slug + "/delete"}>
+//                     Delete
+//                   </Link>
+//                 </Button>
+//               </div>
+//             </article>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+export default async function BlogAdminPage() {
+  async function getAllBlogs() {
+    "use server";
+
+    const blogs = await prisma.blog.findMany({
+      include: {
+        author: {
+          select: { name: true, imageUrl: true, role: true },
+        },
+      },
+    });
+
+    if (!blogs) {
+      return {
+        status: 404,
+        data: blogs,
+      };
+    }
+
+    return {
+      status: 200,
+      data: blogs,
+    };
+  }
+
+  const blogs = await getAllBlogs();
+
+  if (blogs.status === 404 || !blogs.data || !blogs.data.length) {
+    return (
+      <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
+        <div className="flex items-center">
+          <h1 className="text-lg font-semibold md:text-2xl">Blog</h1>
+        </div>
+        <div
+          className="flex flex-col flex-1 items-center justify-center rounded-lg"
+          x-chunk="dashboard-02-chunk-1"
+        >
+          <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
+            No blog posts found
+          </h3>
+          <p className="leading-7">How about adding a new blog post?</p>
+          <Button asChild variant="default" className="mt-6">
+            <Link href="/admin/blog/new">Add new blog post</Link>
+          </Button>
+        </div>
+      </main>
+    );
+  }
+
+  return (
+    <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
+      <div className="flex items-center">
+        <h1 className="text-lg font-semibold md:text-2xl">Blog</h1>
+      </div>
+      <div
+        className="flex rounded-lg grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-4"
+        x-chunk="dashboard-02-chunk-1"
+      >
+        {blogs.data.map((post) => (
+          <article
+            key={post.slug}
+            className="flex flex-col items-start justify-between"
+          >
+            <div className="relative w-full">
+              <img
+                src={post.imageUrl}
+                alt=""
+                className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+              />
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+            </div>
+            <div className="max-w-xl">
+              {/*<div className="mt-8 flex items-center gap-x-4 text-xs">
+                   <time dateTime={post.datetime} className="text-gray-500">
+                     {post.date}
+                   </time>
+                   <a
+                     href={post.category.href}
+                     className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                   >
+                     {post.category.title}
+                   </a>
+                 </div>*/}
+              <div className="group relative">
+                <h3 className="mt-6 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                  <Link href={"/blog/" + post.slug}>
+                    <span className="absolute inset-0" />
+                    {post.title}
+                  </Link>
+                </h3>
+                <p className="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">
+                  {post.description}
+                </p>
+              </div>
+              <div className="relative mt-8 flex items-center gap-x-4">
+                <img
+                  src={post.author.imageUrl || ""}
+                  alt=""
+                  className="h-10 w-10 rounded-full bg-gray-100"
+                />
+                <div className="text-sm leading-6">
+                  <p className="font-semibold text-gray-900">
+                    <span className="absolute inset-0" />
+                    {post.author.name}
+                  </p>
+                  <p className="text-gray-600">{post.author.role}</p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-8 flex flex-col space-y-4 w-full">
+              <Button variant={"secondary"} asChild>
+                <Link href={"/admin/blog/" + post.slug + "/edit"}>Edit</Link>
+              </Button>
+              <Button variant={"secondary"} asChild>
+                <Link href={"/admin/blog/" + post.slug + "/delete"}>
+                  Delete
+                </Link>
+              </Button>
+            </div>
+          </article>
+        ))}
+      </div>
+    </main>
+  );
+}
