@@ -92,8 +92,8 @@ export async function deleteBlogPost(slug: string) {
     },
   });
 
-  revalidatePath("/blog", "page");
-  revalidatePath("/", "page");
+  revalidatePath("/blog");
+  revalidatePath("/");
   redirect("/blog");
 }
 
@@ -132,8 +132,8 @@ export async function updateBlogPost(
     },
   });
 
-  revalidatePath("/blog", "page");
-  revalidatePath("/", "page");
+  revalidatePath("/blog");
+  revalidatePath("/");
   redirect("/blog");
 }
 
@@ -168,7 +168,7 @@ export async function createBlogPost(
     },
   });
 
-  revalidatePath("/blog", "page");
-  revalidatePath("/", "page");
+  revalidatePath("/blog");
+  revalidatePath("/");
   redirect("/blog");
 }

@@ -13,8 +13,8 @@ export default async function DeleteBlogPage({
     },
   });
 
-  revalidatePath("/admin/blog", "page");
-  revalidatePath("/blog", "page");
-  revalidatePath("/", "page");
+  revalidatePath("/admin/blog");
+  revalidatePath("/blog");
+  revalidatePath("/");
   redirect("/admin/blog");
 }
